@@ -1,0 +1,80 @@
+{
+  "name": "SearchAnalytics",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": false,
+    "postgresql": {
+      "schema": "main",
+      "table": "search_analytics"
+    }
+  },
+  "properties": {
+    "query": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "id": true,
+      "postgresql": {
+        "columnName": "query",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "nullable": "NO"
+      }
+    },
+    "ip": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "id": true,
+      "postgresql": {
+        "columnName": "ip",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "nullable": "YES"
+      }
+    },
+    "count": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "count",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "recently_searched_at": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "recently_searched_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  },
+  "acls":[
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "property": "*",
+      "permission": "ALLOW"
+    }
+  ]
+}

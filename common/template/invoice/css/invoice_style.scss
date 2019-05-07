@@ -1,0 +1,156 @@
+$TheAsiaGreen: #4CAC87;
+$charcoalBlack: #363436;
+$MediumGray: #847E7F;
+$LightGray: #DCD9D9;
+$TableLightGreen: #daede1;
+$Tablegreen: #a2d0b9;
+$RubyRed: #ff5064;
+
+.section-line{
+  width: 100%;
+  display: block;
+  border-bottom: $LightGray 1px solid;
+  margin-top: .7em;
+  margin-bottom: .1em;
+}
+.section-line-witout-bottom-pad{
+  width: 100%;
+  display: block;
+  border-bottom: $LightGray 1px solid;
+  margin-top: .7em;
+}
+.wrapper-invoice-content{
+  margin: 3em;
+  .wrapper-header-section{
+    text-align: center;
+    img{
+      width: 100%;
+    }
+    h1{
+      margin-top: .2em !important;
+    }
+  }
+  .label{
+    font-weight: 800;
+  }
+  .wrapper-middle-section{
+    display: block;
+    margin-left: 1em;
+    margin-right: 1em;
+    .wrapper-address-to{
+      font-size: .8em;
+      padding-top: 3em;
+      padding-bottom: 3em;
+      .to-address{
+        display: block;
+        padding-right: 1em;
+      }
+    }
+    .three-box-top{
+      font-size: .8em;
+      box-sizing:border-box;
+      border-left: 1px solid $LightGray;
+      border-right: 1px solid $LightGray;
+      border-bottom: 1px solid $LightGray;
+      .box-label{
+        display: block;
+        width: 100%;
+        color: $MediumGray;
+        font-weight: 800;
+        padding-left: .3em;
+      }
+      .box-data{
+        display: block;
+        width: 100%;
+        color: $charcoalBlack;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        text-align: center;
+        font-weight: 800;
+      }
+    }
+  }
+  .wrapper-remark-section{
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    .remark{
+      font-size: .8em;
+    }
+  }
+  .wrapper-table-section{
+    height: 520px;
+    table{
+      text-align: left;
+      font-size: 14px;
+      border-collapse: collapse;
+    }
+    td{
+      padding: .5em;
+    }
+    th{
+      padding: .5em;
+    }
+    table, th, td{
+      border: 1px solid $LightGray;
+    }
+    .table-light-green{
+      background-color: $TableLightGreen;
+    }
+    .table-green{
+      background-color: $Tablegreen;
+    }
+    .td-description{
+      display: block;
+      width: 100%;
+    }
+    .text-right{
+      text-align: right;
+    }
+  }
+  .wrapper-bank-detail{
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 12px;
+    table{
+      font-size: 12px;
+    }
+    tr{
+      padding-top: .3em;
+      padding-bottom: .3em;
+    }
+  }
+  .footer-address{
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 12px;
+    span{
+      display: block;
+      width: 100%;
+    }
+  }
+}
+.voucher-paid{
+  position: fixed;
+  top: 200px;
+  right: 150px;
+  z-index: 9999;
+  color: $TheAsiaGreen;
+  font-size: 4em;
+  display: block;
+  transform: rotate(350deg);
+  font-weight: bolder;
+}
+.voucher-cancelled{
+  position: fixed;
+  top: 200px;
+  right: 150px;
+  z-index: 9999;
+  color: $RubyRed;
+  font-size: 4em;
+  display: block;
+  transform: rotate(350deg);
+  font-weight: bolder;
+}

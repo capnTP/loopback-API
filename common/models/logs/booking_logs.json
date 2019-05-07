@@ -1,0 +1,110 @@
+{
+  "name": "BookingLogs",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "booking_logs"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigserial",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "type": {
+      "type": "String",
+      "length": null,
+      "postgresql": {
+        "columnName": "type",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "source": {
+      "type": "String",
+      "length": null,
+      "postgresql": {
+        "columnName": "source",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "severity": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "severity",
+        "dataType": "smallint",
+        "nullable": "NO"
+      }
+    },
+    "message": {
+      "type": "String",
+      "length": null,
+      "postgresql": {
+        "columnName": "message",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "response": {
+      "type": "String",
+      "length": null,
+      "postgresql": {
+        "columnName": "response",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "model_name": {
+      "type": "String",
+      "length": null,
+      "postgresql": {
+        "columnName": "model_name",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "status_code": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "status_code",
+        "dataType": "int8",
+        "nullable": "YES"
+      }
+    },
+    "created_at": {
+      "type": "Date",
+      "default": "$now",
+      "required": true,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp",
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "Date",
+      "default": "$now",
+      "required": true,
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp",
+        "nullable": "NO"
+      }
+    }
+  }
+}

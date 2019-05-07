@@ -1,0 +1,91 @@
+<% if (similar_tours.length > 0) { %>
+<div>
+    <h1 style=" color: #363436;"><%= header_similar_tour %></h1>
+    <p style="font-family: <%= font_family_name_name %>;
+  font-size: 20px;
+  font-weight: 300;color: #363436;    margin-bottom: 0;"><%= paragraph_before_similar_tour %>
+      <b><%= product_city %></b> <%= paragraph_after_similar_tour %></p>
+  </div>
+
+
+  <div>
+
+    <div class="text-mg-container">
+      <% for(var i=0; i<similar_tours.length; i++) { %>
+      <div style=<% if(i%2 == 0) { %>"display: inline-block; margin-right: 25px;"<% } else { %>"display: inline-block;"<% } %>>
+        <a style="color:black; text-decoration: none;" target="blank" href="<%= website_url %>/discover/<%= similar_tours[i].slug %>">
+          <div style="margin: 30px 0;background-image:  url('<%= similar_tours[i].thumbnail_url %>?auto=compress&lossless=1&q=65&crop=center,%20center&w=285&h=200&fit=crop'); background-repeat: no-repeat; height: 200px;width: 285px;"></div>
+        </a>
+        <a style="color:black; text-decoration: none;" target="blank" href="<%= website_url %>/discover/<%= similar_tours[i].slug %>">
+          <p style="font-family: <%= font_family_name_name %>;
+          font-size: 16px;
+          font-weight: 300;
+          width: 285px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;"><%= similar_tours[i].name %>
+          </p>
+        </a>
+        <% /* %>
+        <% if(similar_tours[i].read_reviews > 0) { %>
+        <span style="font-size: 20px;;color: #ffc03a;">
+          <% for(var j=0; j<similar_tours[i].rating; j++) { %>
+          &#9733;
+          <% } %>
+          <span style="color: #ebeff1;">
+            <% for(var j=0; j< (5-similar_tours[i].rating); j++) { %>
+            &#9733;
+            <% } %>
+          </span>
+          <span style="color: #363436; font-family: <%= font_family_name_name %>;
+          font-size: 12px;
+          font-weight: 300;
+          word-wrap: break-word;"> (<%= similar_tours[i].read_reviews %>) read reviews</span>
+        </span>
+        <% } %>
+        <% */ %>
+        <% /* %>
+          <% if((!similar_tours[i].is_discounted) || (similar_tours[i].discount_percent == 0)){ %>
+            <p style=" color: #4cac87; margin-bottom: 0;">
+              <%= similar_tours[i].booking_currency_code %> <b style="font-size: 24px"><%= similar_tours[i].full_converted_price %></b>
+            </p>
+          <% }else{ %>
+            <p style=" color: rgba(54, 52, 54, 0.5); margin-bottom: 0;">
+              <del><%= similar_tours[i].booking_currency_code %> <%= similar_tours[i].full_converted_price %></del>
+            </p>
+            <span style="color: #4cac87">
+              <%= similar_tours[i].booking_currency_code %> <b style="font-size: 24px"><%= similar_tours[i].discounted_price %></b>
+            </span>
+          <% } %>
+        <% */ %>
+        <p style=" color: #4cac87; margin-bottom: 0;">
+            <%= similar_tours[i].booking_currency_code %> <b style="font-size: 24px"><%= similar_tours[i].full_converted_price %></b>
+        </p>
+      </div>
+      <% } %>
+    </div>
+
+
+    <div class="action-content" style="margin: 25px 0;">
+      <a target="blank" href="<%= website_url %>/city/<%= product_city_url.toLowerCase() %>" style="width: 237px;
+      height: 40px;
+      border-radius: 3px;
+      border: solid 1px #4bab86;
+      background-color: white;
+      text-decoration:none;
+      padding: 14px;
+    ">
+        <span style=" width: 250px;
+      height: 19px;
+      font-family: <%= font_family_name_name %>;
+      font-size: 16px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #4bab86;"><%= see_more_button %> <%= product_city %> <%= see_more_button_after %></span>
+    </a>
+  </div>
+<% } %>

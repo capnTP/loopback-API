@@ -1,0 +1,19 @@
+{
+	"paragraph1": "Dear ",
+	"paragraphGreeting": "Greeting from",
+	"paragraphGrretingCompanyName": "TheAsia.com!",
+	"paragraph2": "Please refer to your booking under BID",
+	"paragraph3": " as below :",
+	"lead_guest": "Lead Guest: ",
+	"trip_activity1": "Trip",
+	"trip_activity2": "Activity: ",
+	"option": "Option: ",
+	"trip_start_date": "Trip Start Date: ",
+	"trip_end_date": "Trip End Date: ",
+	"no_of_guest": "No. of Guest: ",
+	"cancellation_policy_label": "Cancellation Policy: ",
+	"paragraph_thank_you": "Thank you for choosing TheAsia.com.",
+	"paragraph_regards": "Regards,",
+	"paragraph_regards_company_name": "TheAsia.com",
+	"special_request_title": "special_request_title"
+}

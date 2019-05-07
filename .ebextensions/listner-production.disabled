@@ -1,0 +1,9 @@
+option_settings:
+  aws:elbv2:listener:80:
+    Protocol: HTTP
+    ListenerEnabled: 'true'
+    SSLCertificateArns: arn:aws:acm:ap-southeast-1:159804268192:certificate/6b594cb8-fcd3-47eb-938d-e930bc2baacc
+  aws:elbv2:listener:443:
+    ListenerEnabled: 'true'
+    Protocol: HTTPS
+    SSLCertificateArns: arn:aws:acm:ap-southeast-1:159804268192:certificate/6b594cb8-fcd3-47eb-938d-e930bc2baacc

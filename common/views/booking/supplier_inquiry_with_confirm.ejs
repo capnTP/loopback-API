@@ -1,0 +1,383 @@
+<html>
+
+<head>
+    <% for (let i=0; i<font_family_name_link.length; i++) { %>
+        <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+        <% } %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="email_template" style="
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: <%= font_family_name_name %>;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #363436;">
+    <div>
+      <div>
+        <div style="height: 70px;display: table;width: 100%;border-bottom: solid 2px rgba(54, 52, 54, 0.1);font-size: 14px;">
+          <div style="height: 30px;display: table-cell;vertical-align: middle;">
+            <img src="https://theasia.imgix.net/logo/theasia.png">
+          </div>
+        </div>
+        <div class="content" style="margin-top: 30px;font-size: 14px;">
+
+          <h1 style="color: #363436;font-family: <%= font_family_name_name %>;"><%= paragraph1 %></h1>
+          <div style="font-family: <%= font_family_name_name %>; font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;">
+            <b style="color: #363436;"><%= paragraph2_before %></b> <%= paragraph2_after %></div>
+            <div style="
+            margin-top: 20px;
+            width: 600px;
+            font-family: <%= font_family_name_name %>;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.56;
+            letter-spacing: normal;
+            color: #363436;
+            text-shadow: 0 0 black;">
+            <div style="width:100%; display: inline-block;">
+              <span style="display: inline-block;"><%= booking_number_label %>:</span>
+              <span style="display: inline-block; color: #ff8733; width: 60%; float: right;">#<%= booking_no %></span>
+            </div>
+            <div style="width:100%; display: inline-block;">
+              <span style="display: inline-block;"><%= booking_status_label %>:</span>
+              <span style="display: inline-block; color: #ff8733; width: 60%; float: right;"><%= booking_status %></span>
+            </div>
+            <div style="margin-top:2em;width:100%; display: inline-block;">
+              <span style="display: inline-block; font-size: 16px;"><%= tour_name_label %>:</span>
+              <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><% if(supplier_product_name == ''){ %><%= product_name %><% } else { %><%= supplier_product_name %><% } %></span>
+            </div>
+            <div style="width:100%; display: inline-block;">
+              <span style="display: inline-block; font-size: 16px;"><%= customer_name_label %>:</span>
+              <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><a style="text-decoration: none; color:black;" href="#"><%= name %></a></span>
+            </div>
+            <div style="width:100%; display: inline-block;">
+              <span style="display: inline-block; font-size: 16px;"><%= customer_contact_label %>:</span>
+              <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= billing_phone %></span>
+            </div>
+            <% if(adult_pax || child_pax) { %>
+              <div style="width:100%; display: inline-block;">
+                  <span style="display: inline-block; font-size: 16px;"><%= total_pax_label %>:</span>
+                  <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= adult_pax %><% if(adult_pax && child_pax) { %> | <% } %><%= child_pax %></span>
+              </div>
+            <% } %>
+            <% if(vehicle_pax) { %>
+              <div style="width:100%; display: inline-block;">
+                  <span style="display: inline-block; font-size: 16px;"><%= total_vehicle_label %>:</span>
+                  <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= vehicle_pax %></span>
+              </div>
+              <% if(drop_off_place) { %>
+                <div style="width:100%; display: inline-block;">
+                    <span style="display: inline-block; font-size: 16px;"><%= drop_off_place_label %>:</span>
+                    <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= drop_off_place %></span>
+                </div>
+                <% } %>
+            <% } %>
+            <% if(luggage_pax) { %>
+              <div style="width:100%; display: inline-block;">
+                  <span style="display: inline-block; font-size: 16px;"><%= total_luggage_label %>:</span>
+                  <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= luggage_pax %></span>
+              </div>
+            <% } %>
+            <% if(sim_pax) { %>
+              <div style="width:100%; display: inline-block;">
+                  <span style="display: inline-block; font-size: 16px;"><%= total_sim_label %>:</span>
+                  <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= sim_pax %></span>
+              </div>
+            <% } %>
+            <div style="width:100%; display: inline-block;">
+              <span style="display: inline-block; font-size: 16px;"><%= tour_date_lable %>:</span>
+              <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= trip_date %></span>
+            </div>
+          </div>
+
+          <div style="width: 100%; display: inline-block; margin: 30px 0 10px;">
+            <a 
+              href="<%= suppliers_app_url %>/booking/<%= booking_id %>#confirm"
+              target="_blank"
+              rel="noopener noreferer"
+              style="width: 150px; margin-right:5%;  border-radius: 3px; background-color: #4bab86; border: none; color: white; font-weight: bold; padding: 15px 50px; display: inline-block; text-align: center; text-decoration: none;"
+            >
+                Confirm Booking
+            </a>
+            <a
+              href="<%= suppliers_app_url %>/booking/<%= booking_id %>#decline"
+              target="_blank"
+              rel="noopener noreferer"
+              style="width: 150px; margin-left:5%;  border-radius: 3px; background-color: #ff5064; border: none; color: white; font-weight: bold; padding: 15px 50px; display: inline-block; text-align: center; text-decoration: none;"
+            >
+              Not Available
+            </a>
+          </div>
+          
+          <p style="font-family: <%= font_family_name_name %>; margin: 25px 0;">
+            <%= paragraph3 %>
+          </p>
+          
+          <div>
+            <span style="margin-bottom: 4px"><%= regards %></span>
+            <div style="color: #4cac87;font-weight: bold;"><a style="font-weight: bold; color: #4cac87;text-decoration: none;" target="blank" href="<%= website_url %>"><%= regards_website_url %></a></div>
+          </div>
+
+          <hr style="border: solid 1px rgba(54, 52, 54, 0.1);
+        margin: 50px 0;">
+
+
+          <h2 style="color: #363436; font-family: <%= font_family_name_name %>;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;"><%= booking_detail_header %></h2>
+
+
+          <p style="     margin: 30px 0;
+        font-family: <%= font_family_name_name %>;
+        font-size: 24px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #363436;;"><% if(supplier_product_name == ''){ %><%= product_name %><% } else { %><%= supplier_product_name %><% } %></p>
+
+          <div>
+
+            <table style="margin:20px 0;width: 100%;">
+              <tbody>
+                <tr>
+                  <td style="width: 50%; color:#363436;">
+                    <b><%= departure_date_label %>: </b>
+                  </td>
+                  <td style="    padding-bottom: 5px;
+                          color: #363436;
+                          "><%= trip_date %></td>
+                </tr>
+                <tr>
+                  <td style="width: 50%;color: #363436;     padding-bottom: 5px;">
+                    <b><%= booking_date_label %>: </b>
+                  </td>
+                  <td style="    padding-bottom: 5px;
+                          color: #363436;
+                          "><%= booking_date %></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+          <hr style="border: solid 1px rgba(54, 52, 54, 0.1);
+        margin: 30px 0;">
+
+          <div>
+            <h2 style="color: #363436;"><%= customer_detail_header %></h2>
+            <table style="margin:20px 0;width: 100%;">
+                <tbody>
+                  <tr>
+                    <td style="width: 50%; font-weight: 300;
+                  color: rgba(54, 52, 54, 0.5);">
+                      <span><%= customer_name_label %></span>
+
+                      <br>
+                      <span>
+                        <b style=" color: #363436;"><%= name %></b>
+                      </span>
+
+                    </td>
+                    <td style="width: 50%; font-weight: 300;
+                  color: rgba(54, 52, 54, 0.5);">
+                      <span> <%= customer_contact_number_label %></span>
+
+                      <br>
+                      <span>
+                        <b style=" color: #363436;"><%= billing_phone %></b>
+                      </span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                      <td style="width: 50%; font-weight: 300;
+                      color: rgba(54, 52, 54, 0.5);">
+                          <span> <%= customer_nationality_label %></span>
+
+                          <br>
+                          <span>
+                            <b style=" color: #363436;"><%= nationality %></b>
+                          </span>
+                        </td>
+                      <td style="width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5);padding-top: 10px; ">
+                        <span><%= customer_email_label %></span>
+
+                        <br>
+                        <span>
+                          <b style=" color: #363436; "><a style="text-decoration: none; color:black;" href="#"><%= to_email %></a></b>
+                        </span>
+
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <hr style="border: solid 1px rgba(54, 52, 54, 0.1);
+        margin: 30px 0;">
+
+          <div>
+
+            <h2 style="color: #363436;"><%= price_breakdown_header %></h2>
+            <table style="margin:20px 0;width: 100%;">
+              <tbody>
+                <tr>
+                  <td style="width: 50%;padding-bottom: 5px; ">
+                    <b style=" color: #363436;"><%= adult_pax %></b></td>
+                  <td style="padding-bottom: 5px;">
+                    <b style=" color: #363436;"><%= supplier_currency_code %> <%= supplier_adult_price %></b>
+                  </td>
+                </tr>
+
+                <% if(child_pax) { %>
+                <tr>
+                  <td style="width: 50%; padding-bottom: 5px; ">
+                    <b style=" color: #363436; "><%= child_pax %> </b>
+                  </td>
+                  <td style=" padding-bottom: 5px; ">
+                    <b style=" color: #363436; "><%= supplier_currency_code %> <%= supplier_child_price %></b>
+                  </td>
+                </tr>
+                <% } %>
+                <tr>
+                  <td style="width: 50%;padding-bottom: 5px; ">
+                    <b style=" color: #363436;"><%= total_price %></b>
+                  </td>
+                  <td style="
+                padding-bottom: 5px;
+                          ">
+                          <b style="color: #4cac87;"><%= supplier_currency_code %>
+                            <span style=" font-size: 24px;color: #4cac87;"><%= supplier_total %></span>
+                    </b>
+                  </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+
+          </div>
+          <% if(special_request) { %>
+          <hr style="border: solid 1px rgba(54, 52, 54, 0.1);
+        margin: 30px 0;">
+
+          <h2 style="color: #363436;"><%= special_requests_header %></h2>
+          <p><%= special_request %></p>
+          <% } %>
+          <hr style="border: solid 1px rgba(54, 52, 54, 0.1);
+        margin: 30px 0;">
+        <div>
+
+          <h2 style="color: #363436; "><%= pick_up_information_header %></h2>
+          <table style="margin:20px 0;width: 100%; ">
+            <tbody>
+              <tr>
+                <% if(passport_number) { %>
+                <td style="width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5); ">
+                  <span><%= passport_number_label %></h2></span>
+                  <br>
+                  <span>
+                    <b style=" color: #363436; "><%= passport_number %></b>
+                  </span>
+                </td>
+                <% } %>
+                <% if(pickup_location_time) { %>
+                <td style="width: 50%;width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5); ">
+                  <span>Pickup time and location</span>
+                  <br>
+                  <span>
+                    <b style=" color: #363436; "><%= pickup_location_time %></b>
+                  </span>
+
+                </td>
+                <% } %>
+              </tr>
+
+              <tr>
+                <% if(pickup_place) { %>
+                <td style="width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5); padding-top: 10px; ">
+                  <span> <%= pickup_location_label %></span>
+                  <br>
+                  <span>
+                    <b style=" color: #363436; "><%= pickup_place %></b>
+                  </span>
+                </td>
+                <% } %>
+                <% if(pickup_time) { %>
+                <td style="width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5); padding-top: 10px; ">
+                  <span><%= pick_up_time_label %></span>
+                  <br>
+                  <span>
+                    <b style=" color: #363436; "><%= pickup_time %></b>
+                  </span>
+                </td>
+                <% } %>
+              </tr>
+              <tr>
+                <% if(hotel_name) { %>
+                <td style="width: 50%;width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5); padding-top: 10px; ">
+                  <span><%= hotel_name_label %></span>
+                  <br>
+                  <span>
+                    <b style=" color: #363436; "><%= hotel_name %></b>
+                  </span>
+                </td>
+                <% } %>
+                <% if(flight_number) { %>
+                <td style="width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5); padding-top: 10px; ">
+                  <span><%= flight_number_label %></span>
+                  <br>
+                  <span>
+                    <b style=" color: #363436; "><%= flight_number %></b>
+                  </span>
+                </td>
+                <% } %>
+              </tr>
+              <tr>
+                <% if(selected_time) { %>
+                  <td style="width: 50%;width: 50%; font-weight: 300; color: rgba(54, 52, 54, 0.5); padding-top: 10px; ">
+                    <span><%= selected_time_label %></span>
+                    <br>
+                    <span>
+                      <b style=" color: #363436; "><%= selected_time %></b>
+                    </span>
+                  </td>
+                  <% } %>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+          <%- include('../partial/footer.ejs') %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

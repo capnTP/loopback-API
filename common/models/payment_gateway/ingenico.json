@@ -1,0 +1,36 @@
+{
+    "name": "Ingenico",
+    "base": "Model",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "id": {
+            "type": "Number",
+            "length": null,
+            "precision": null,
+            "scale": 0,
+            "id": true,
+            "generated": true
+        },
+        "booking_id": {
+            "type": "String",
+            "required": false,
+            "length": null,
+            "precision": null,
+            "scale": null
+        },
+        "payment_method_id": {
+            "type": "Number",
+            "length": null,
+            "precision": null,
+            "scale": 0
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+  }
+  

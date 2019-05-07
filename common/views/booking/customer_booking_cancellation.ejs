@@ -1,0 +1,189 @@
+<html>
+
+<head>
+    <% for (let i=0; i<font_family_name_link.length; i++) { %>
+        <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+        <% } %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="email_template" style="
+max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: <%= font_family_name_name %>;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #363436;
+">
+    <div>
+      <div>
+        <div style="height: 70px;display: table;width: 100%;border-bottom: solid 2px rgba(54, 52, 54, 0.1);font-size: 14px;">
+          <div style="height: 30px;display: table-cell;vertical-align: middle;">
+            <img src="https://theasia.imgix.net/logo/theasia.png">
+          </div>
+        </div>
+        <div class="content" style="margin-top: 30px;font-size: 14px;">
+
+          <h1 style="color: #363436;font-family: <%= font_family_name_name %>;"><%= paragraph1 %></h1>
+
+          <div style="font-family: <%= font_family_name_name %>; font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;">
+            <%= paragraph2 %>
+          </div>
+
+
+          <div style="
+        margin-top: 30px;
+        font-family: <%= font_family_name_name %>;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #363436;
+
+        ">
+            <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block;"><%= booking_number_label %>:</span>
+                <span style="display: inline-block; color: #ff5064; width: 60%; float: right;">#<%= booking_no %></span>
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block;"><%= booking_status_label %>:</span>
+                <span style="display: inline-block; color: #ff5064; width: 60%; float: right;"><%= booking_status %></span>
+              </div>
+            <div style="margin-top:2em;width:100%; display: inline-block;">
+              <span style="display: inline-block; font-size: 16px;"><%= tour_name_label %>:</span>
+              <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= product_name %></span>
+            </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= tour_option_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= sub_product_name %></span>
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= guest_name_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= name %></span>
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= customer_email_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><a style="font-weight: bold; color: black;text-decoration: none;" href="#"><%= to_email %></a></span>
+              </div>
+              <% if(adult_pax || child_pax) { %>
+                <div style="width:100%; display: inline-block;">
+                    <span style="display: inline-block; font-size: 16px;"><%= total_pax_label %>:</span>
+                    <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= adult_pax %><% if(adult_pax && child_pax) { %> | <% } %><%= child_pax %></span>
+                </div>
+              <% } %>
+              <% if(vehicle_pax) { %>
+                <div style="width:100%; display: inline-block;">
+                    <span style="display: inline-block; font-size: 16px;"><%= total_vehicle_label %>:</span>
+                    <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= vehicle_pax %></span>
+                </div>
+                <% if(drop_off_place) { %>
+                  <div style="width:100%; display: inline-block;">
+                      <span style="display: inline-block; font-size: 16px;"><%= drop_off_place_label %>:</span>
+                      <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= drop_off_place %></span>
+                  </div>
+                  <% } %>
+              <% } %>
+              <% if(luggage_pax) { %>
+                <div style="width:100%; display: inline-block;">
+                    <span style="display: inline-block; font-size: 16px;"><%= total_luggage_label %>:</span>
+                    <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= luggage_pax %></span>
+                </div>
+              <% } %>
+              <% if(sim_pax) { %>
+                <div style="width:100%; display: inline-block;">
+                    <span style="display: inline-block; font-size: 16px;"><%= total_sim_label %>:</span>
+                    <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= sim_pax %></span>
+                </div>
+              <% } %>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= booking_date_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= booking_date %></span>
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= tour_date_lable %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= trip_date %></span>
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= total_cost_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= total_usd %> USD %>( <%= total %> <%= currency_code %> )</span><br />
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= cancallation_cost_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= refund_fee_usd %> USD ( <%= refund_fee %> <%= currency_code %> )</span><br />
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= total_refund_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= refund_amount_usd %> USD ( <%= refund_amount %> <%= currency_code %> )</span><br />
+              </div>
+              <div style="width:100%; display: inline-block;">
+                <span style="display: inline-block; font-size: 16px;"><%= cancellation_policy_label %>:</span>
+                <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 60%; float: right;"><%= cancellation_policy %> ( <a style="color:black; text-decoration: none;" target="blank" href="https://www.theasia.com/cancellation-policy"><%= see_details_link %></a> )</span><br />
+              </div>
+          </div>
+
+          <p style="font-family: <%= font_family_name_name %>;
+        margin: 30px 0;
+"><%= paragraph3 %>
+
+          </p>
+
+          <!-- <div class="action-content" style="margin: 25px 0;">
+            <button style="
+          width: 245px;
+          height: 40px;
+          border-radius: 3px;
+          background-image: linear-gradient(to right, #ff8733, #ffc32c);border: none;">
+              <span style=" width: 237px;
+            height: 19px;
+            font-family: <%= font_family_name_name %>;
+            font-size: 16px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;"><%= survey_button %></span>
+            </button>
+          </div> -->
+
+          <div>
+            <span style="margin-bottom: 4px"><%= regards %></span>
+            <div style="color: #4cac87;font-weight: bold;"><a style="font-weight: bold; color: #4cac87;text-decoration: none;" target="blank" href="<%= website_url %>"><%= regards_website_url %></a></div>
+          </div>
+
+          <hr style="border: solid 1px rgba(54, 52, 54, 0.1);
+        margin: 46px 0;">
+
+            <%- include('../partial/similar.ejs') %>
+
+            <%- include('../partial/footer.ejs') %>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+</body>
+
+</html>

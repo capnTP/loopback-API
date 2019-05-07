@@ -1,0 +1,94 @@
+{
+  "name": "TopSearches",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true ,
+    "postgresql": {
+      "schema": "main",
+      "table": "top_searches"
+    },
+    "relations": {
+      "localization": {
+        "model": "TopSearchesLang",
+        "type": "hasMany",
+        "foreignKey": "keyword_id"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0
+      }
+    },
+    "keyword": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "keyword",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "url": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "url",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "order": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "order",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "active": {
+      "type": "Boolean",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "default": false,
+      "postgresql": {
+        "columnName": "active",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0
+      }
+    }
+  }
+}

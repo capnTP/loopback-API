@@ -1,0 +1,666 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "../common/models/activity",
+      "../common/models/booking",
+      "../common/models/blog",
+      "../common/models/cancellation",
+      "../common/models/charge",
+      "../common/models/categories",
+      "../common/models/cities",
+      "../common/models/company",
+      "../common/models/container",
+      "../common/models/contract_logos",
+      "../common/models/countries",
+      "../common/models/currencies",
+      "../common/models/excluded_included",
+      "../common/models/features",
+      "../common/models/languages",
+      "../common/models/medias",
+      "../common/models/notes",
+      "../common/models/offers",
+      "../common/models/offer_constraint_categories",
+      "../common/models/offer_constraint_types",
+      "../common/models/offer_transactions",
+      "../common/models/payments",
+      "../common/models/payment_gateway",
+      "../common/models/payment_not_complete",
+      "../common/models/products",
+      "../common/models/redirects",
+      "../common/models/regions",
+      "../common/models/suppliers",
+      "../common/models/roles",
+      "../common/models/users",
+      "../common/models/contact",
+      "../common/models/logs",
+      "../common/models/role_types",
+      "../common/models/reviews",
+      "../common/models/Support",
+      "../common/models/voucher",
+      "../common/models/global_configs",
+      "../common/models/affiliates",
+      "../common/models/home",
+      "../common/models/searches",
+      "./models"
+    ],
+    "mixins": [
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "loopback/common/mixins",
+      "../node_modules/loopback-disable-all-remote-methods-mixin",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ACL": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": false
+  },
+  "TopSearches": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "TopSearchesLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "BlogFeed": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Activity": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Affiliates": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AffiliatesBillingAcct": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AffiliatesInvoices": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AffiliateInvoiceSettings": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AffiliateTypes": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AffiliatesPayoutType": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AffiliatesRates": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "AffiliatesStatus": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "EmailActivity": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Charge": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ChargeStatus": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ChargeType": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Company": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Notes": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Newsletter": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "RoleMapping": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": false,
+    "options": {
+      "strictObjectIDCoercion": false
+    }
+  },
+  "Role": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": false
+  },
+  "BookingMethods": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "BookingMethodsLang": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Reviews": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Redirects": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Comments": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "GlobalConfig": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Cancellations": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CancellationPolicies": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CancellationPoliciesLang": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Categories": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CategoriesLang": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CategoryType": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CategoryTypeLang": {
+    "dataSource": "theasia",
+    "public": false,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Cities": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CitiesLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ContactUs": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Countries": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CountriesLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Currencies": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "CurrenciesLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ExcludedIncluded": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ExcludedIncludedLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Features": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "FeaturesLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "create": true,
+          "update": true,
+          "delete": true
+        }
+      }
+    }
+  },
+  "Ingenico": {
+    "dataSource": null,
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Paypal": {
+    "dataSource": null,
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Iamport": {
+    "dataSource": null,
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Voucher": {
+    "dataSource": null,
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "HomePageFeed": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "HomePageFeedLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Languages": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Medias": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "MediasLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Booking": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "BookingDetails": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "BookingStatus": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "BookingStatusLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Drafts": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Payouts": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "PaymentMethods": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "PaymentStatus": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "PaymentMethodsLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ContractLogos": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Payments": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "PaymentNotComplete": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Invoices": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Prices": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Pricing": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Tours": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ToursLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ToursCategories": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ToursExcludedIncluded": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ToursFeatures": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "ToursMedias": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "SubProducts": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "SubProductsLang": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Regions": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "SearchAnalytics": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Suppliers": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "SuppliersBillingAccounts": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "SuppliersPaymentAccounts": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "PayoutInvoiceSettings": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Tickets": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Users": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "customerPaymentDetails": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "UserSocials": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": false
+  },
+  "ContainerUniq": {
+    "dataSource": "uniqNameStorage",
+    "public": false
+  },
+  "Logs": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "PaymentLogs": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "BookingLogs": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "UserRole": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "UserCardData": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "RoleTypes": {
+    "dataSource": "theasia",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Offers": {
+    "dataSource": "theasia",
+    "public": true
+  },
+  "OfferTransactions": {
+    "dataSource": "theasia",
+    "public": true
+  },
+  "OfferConstraintCategories": {
+    "dataSource": "theasia",
+    "public": true
+  },
+  "OfferConstraintTypes": {
+    "dataSource": "theasia",
+    "public": true
+  }
+}

@@ -1,0 +1,765 @@
+{
+  "name": "Booking",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "booking"
+    },
+    "relations": {
+      "bookingMethodIdFkeyrel": {
+        "model": "BookingMethods",
+        "type": "belongsTo",
+        "foreignKey": "booking_method_id"
+      },
+      "bookingUserIdFkeyrel": {
+        "model": "Users",
+        "type": "belongsTo",
+        "foreignKey": "user_id"
+      },
+      "bookingStatusIdFkeyrel": {
+        "model": "BookingStatus",
+        "type": "belongsTo",
+        "foreignKey": "booking_status_id"
+      },
+      "billingCountryIdFkeyrel": {
+        "model": "Countries",
+        "type": "belongsTo",
+        "foreignKey": "billing_country_id"
+      },
+      "nationalityRel":{
+        "model": "Countries",
+        "type": "belongsTo",
+        "foreignKey": "nationality"
+      },
+      "bookingCurrencyIdFkeyrel": {
+        "model": "Currencies",
+        "type": "belongsTo",
+        "foreignKey": "booking_currency_id"
+      },
+      "payment": {
+        "model": "Payments",
+        "type": "hasMany",
+        "foreignKey": "booking_id"
+      },
+      "tour": {
+        "model": "Tours",
+        "type": "belongsTo",
+        "foreignKey": "tour_id"
+      },
+      "sub_product": {
+        "model": "SubProducts",
+        "type": "belongsTo",
+        "foreignKey": "sub_product_id"
+      },
+      "cancellationPoliciesRel": {
+        "model": "CancellationPolicies",
+        "type": "belongsTo",
+        "foreignKey": "cancellation_policy_id"
+      },
+      "charges": {
+        "model": "Charge",
+        "type": "hasMany",
+        "foreignKey": "booking_id"
+      },
+      "notes": {
+        "model": "Notes",
+        "type": "hasMany",
+        "foreignKey": "booking_id"
+      }
+    }
+  },
+  "mixins": {
+     "TimeStamp": { "createdAt": "created_at", "updatedAt": "updated_at" },
+     "Activity":{}
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "booking_no": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "booking_no",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "total": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "total",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "billing_first_name": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "billing_first_name",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "billing_last_name": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "billing_last_name",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "nationality": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "nationality",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "billing_phone": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "billing_phone",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "billing_country_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "billing_country_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "review_email": {
+      "type": "Number",
+      "required": false,
+      "default": 0,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "review_email",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "promocode": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "promocode",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "access_token": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "access_token",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "pickup_place": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "pickup_place",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "pickup_time": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "pickup_time",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "pickup_location_time": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "pickup_location_time",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "flight_number": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "flight_number",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "passport_number": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "passport_number",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "confirmed_at": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "confirmed_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "booking_method_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "booking_method_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "sub_product_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "sub_product_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "tour_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "tour_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "user_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "booking_status_id": {
+      "type": "Number",
+      "required": true,
+      "default": 0,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "booking_status_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "booking_currency_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "booking_currency_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "booking_currency_code": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "booking_currency_code",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "exchange_rate": {
+      "type": "Number",
+      "required": true,
+      "default": 1,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "exchange_rate",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "trip_starts": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "trip_starts",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "trip_ends": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "trip_ends",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "price_details": {
+      "type": "Object",
+      "required": false,
+      "default": null,
+      "length": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "price_details",
+        "dataType": "json",
+        "dataLength": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "special_request": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "special_request",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "selected_time": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "selected_time",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "drop_off_place": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "drop_off_place",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "hotel_name": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "hotel_name",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "meeting_point": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "meeting_point",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "meeting_time": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "meeting_time",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "email_sent": {
+      "type": "Number",
+      "required": false,
+      "default":0,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "email_sent",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "supplier_exchange_rate": {
+      "type": "Number",
+      "required": false,
+      "default":0,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "supplier_exchange_rate",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "supplier_currency_code": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "supplier_currency_code",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "cancellation_policy_id": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "cancellation_policy_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "yes"
+      }
+    },
+    "input_details": {
+      "type": "Object",
+      "required": false,
+      "default": null,
+      "length": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "input_details",
+        "dataType": "json",
+        "dataLength": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "amend_details": {
+      "type": "Object",
+      "required": false,
+      "default": {},
+      "postgresql": {
+        "columnName": "amend_details",
+        "dataType": "json",
+        "nullable": "YES"
+      }
+    },
+    "commission": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "commission",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "discount": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "discount",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "vat": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "vat",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "booking_email": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "booking_email",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "created_at": {
+      "type": "Date",
+      "default": "$now",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "ref_id": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "ref_id",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "supplier_id": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "supplier_id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "supplier_memo": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "supplier_memo",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    }
+  },
+  "acls" :[
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "property": "*",
+      "permission": "ALLOW"
+    }
+  ]
+}

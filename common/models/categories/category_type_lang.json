@@ -1,0 +1,86 @@
+{
+  "name": "CategoryTypeLang",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "category_type_lang"
+    },
+    "relations": {
+      "categoriesTypeLanguageIdFkeyrel": {
+        "model": "Languages",
+        "type": "belongsTo",
+        "foreignKey": "lang_id"
+      },
+      "categoriesTypeIdFkeyrel": {
+        "model": "CategoryType",
+        "type": "belongsTo",
+        "foreignKey": "category_type_id"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "ID",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "name": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "text",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "category_type_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "category_type_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "lang_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "lang_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    }
+  }
+}

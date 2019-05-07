@@ -1,0 +1,23 @@
+{
+    "development" : {
+        "api_url"   :     "https://api.theasiadev.com",
+        "web_url"   :     "https://www.theasiadev.com",
+        "admin_url" :     "https://admin.theasiadev.com",
+        "payment_url":    "https://admin.theasiadev.com",
+        "slack_url" :     "https://hooks.slack.com/services/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"
+    },
+    "production" : {
+        "api_url"   :     "https://api.theasia.com",
+        "web_url"   :     "https://www.theasia.com",
+        "admin_url" :     "https://admin.theasia.com",
+        "payment_url":    "https://admin.theasia.com",
+        "slack_url" :     "https://hooks.slack.com/services/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"
+    },
+    "local" : {
+        "api_url"   :     "http://localhost:3003",
+        "web_url"   :     "http://localhost:3000",
+        "admin_url" :     "http://localhost:8080",
+        "payment_url":    "http://localhost:8080",
+        "slack_url" :     "https://hooks.slack.com/services/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"
+    }
+}

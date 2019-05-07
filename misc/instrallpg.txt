@@ -1,0 +1,17 @@
+brew uninstall --force postgresql
+
+brew cleanup postgresql
+
+sudo brew install  postgresql
+
+pg_dumpall
+
+brew services restart postgresql
+
+psql postgres
+
+alteruser -s -r root  (call this and password as development-theasia)
+
+psql -U postgres 
+
+alter user root with encrypted password 'development-theasia'

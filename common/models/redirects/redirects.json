@@ -1,0 +1,77 @@
+{
+    "name": "Redirects",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true,
+      "postgresql": {
+        "schema": "main",
+        "table": "redirects"
+      },
+      "relations": {}
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "int",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "from": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "from",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "to": {
+        "type": "String",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "to",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      }
+    },
+    "acls" :[
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$authenticated",
+            "property": "create",
+            "permission": "ALLOW"
+        },
+        {
+          "accessType": "*",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "property": "*",
+          "permission": "ALLOW"
+        }
+      ]
+  }

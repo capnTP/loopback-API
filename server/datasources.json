@@ -1,0 +1,36 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory",
+    "file": "db.json"
+  },
+  "theasia": {
+    "host": "development.ch5zrtiltjrv.ap-southeast-1.rds.amazonaws.com",
+    "port": "5432",
+    "database": "theasia",
+    "username": "root",
+    "password": "development-theasia",
+    "name": "theasia",
+    "schema": "main",
+    "debug": true,
+    "connector": "postgresql",
+    "min": 1,
+    "max": 10
+  },
+  "storage": {
+    "name": "storage_s3",
+    "connector": "loopback-component-storage",
+    "provider": "amazon",
+    "keyId": "AKIAJBNE2IJMLDD5UMKQ",
+    "key": "Z/CGLO2j7+QV0zUfBjpg/FmSg0Ck/zp/Mlhwjjno",
+    "acl": "public-read"
+  },
+  "uniqNameStorage": {
+    "name": "storage_s3",
+    "connector": "loopback-component-storage",
+    "provider": "amazon",
+    "keyId": "AKIAJBNE2IJMLDD5UMKQ",
+    "key": "Z/CGLO2j7+QV0zUfBjpg/FmSg0Ck/zp/Mlhwjjno",
+    "acl": "public-read"
+  }
+}

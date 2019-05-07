@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <% for (let i=0; i<font_family_name_link.length; i++) { %>
+        <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+        <% } %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="email_template" style="
+max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: <%= font_family_name_name %>;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #363436;">
+    <div>
+      <div>
+        <div style="height: 70px;display: table;width: 100%;border-bottom: solid 2px rgba(54, 52, 54, 0.1);font-size: 14px;">
+          <div style="height: 30px;display: table-cell;vertical-align: middle;">
+            <img src="https://theasia.imgix.net/logo/theasia.png">
+          </div>
+        </div>
+        <div class="content" style="margin-top: 30px;font-size: 14px;">
+
+          <h1 style="color: black;font-weight: bold;"><%= paragraph1 %></h1>
+          <div style="font-family: <%= font_family_name_name %>; font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;">
+            <%= paragraph2 %>
+          </div>
+
+
+          <div style="
+            margin-top: 30px;
+            font-family: <%= font_family_name_name %>;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.56;
+            letter-spacing: normal;
+            color: #363436;">
+            <div>
+              <span style="width: 50%;"><%= booking_number_label %>:</span>
+              <span style="color: #ff5064;width: 50%;float: right;">#<%= booking_no %></span>
+            </div>
+            <div><%= booking_status_label %>:
+              <span style="color: #ff5064;width: 50%;float: right;"><%= booking_status %></span>
+            </div>
+          </div>
+
+
+          <p style="font-family: <%= font_family_name_name %>; margin: 25px 0;">
+            <%= paragraph3 %>
+          </p>
+
+          <div>
+            <span style="margin-bottom: 4px"><%= regards %></span>
+            <div style="color: #4cac87;font-weight: bold;"><%= company_name %></div>
+          </div>
+          <%- include('../partial/footer.ejs') %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

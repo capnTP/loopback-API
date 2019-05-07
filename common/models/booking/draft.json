@@ -1,0 +1,390 @@
+{
+  "name": "Drafts",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "draft"
+    }
+  },
+  "relations": {
+    "affiliate": {
+      "model": "Affiliates",
+      "type": "belongsTo",
+      "foreignKey": "affiliate_id"
+    },
+    "billing_country": {
+      "model": "Countries",
+      "type": "belongsTo",
+      "foreignKey": "billing_country_id"
+    },
+    "nationalityRel": {
+      "model": "Countries",
+      "type": "belongsTo",
+      "foreignKey": "nationality"
+    },
+    "billing_language": {
+      "model": "Languages",
+      "type": "belongsTo",
+      "foreignKey": "billing_language_id"
+    },
+    "booking_currency": {
+      "model": "Currencies",
+      "type": "belongsTo",
+      "foreignKey": "booking_currency_id"
+    },
+    "sub_product": {
+      "model": "SubProducts",
+      "type": "belongsTo",
+      "foreignKey": "sub_product_id"
+    },
+    "tour": {
+      "model": "Tours",
+      "type": "belongsTo",
+      "foreignKey": "tour_id"
+    },
+    "user": {
+      "model": "Users",
+      "type": "belongsTo",
+      "foreignKey": "user_id"
+    }
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created_at",
+      "updatedAt": "updated_at"
+    },
+    "Activity": {}
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "billing_email": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "billing_email",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "billing_first_name": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "billing_first_name",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "billing_last_name": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "billing_last_name",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "billing_country_id": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "billing_country_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "nationality": {
+      "type": "String",
+      "description": "Store ID but is named this way for consistency with booking",
+      "postgresql": {
+        "columnName": "nationality",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "billing_phone": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "billing_phone",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "billing_language_id": {
+      "type": "Number",
+      "postgresql": "billing_language_id",
+      "dataType": "bigint",
+      "nullable": "YES"
+    },
+    "pickup_place": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "pickup_place",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "pickup_time": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "pickup_time",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "pickup_location_time": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "pickup_location_time",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "selected_time": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "selected_time",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "passport_number": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "passport_number",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "flight_number": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "flight_number",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "hotel_name": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "hotel_name",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "drop_off_place": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "drop_off_place",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "special_request": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "special_request",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "additional_information": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "additional_information",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "sub_product_id": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "sub_product_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "tour_id": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "tour_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "user_id": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "affiliate_id": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "affiliate_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "booking_currency_id": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "booking_currency_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "booking_currency_code": {
+      "type": "String",
+      "postgresql": {
+        "columnName": "booking_currency_code",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "exchange_rate": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "exchange_rate",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "supplier_exchange_rate": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "supplier_exchange_rate",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "total": {
+      "type": "Number",
+      "postgresql": {
+        "columnName": "total",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "trip_starts": {
+      "type": "Date",
+      "postgresql": {
+        "columnName": "trip_starts",
+        "dataType": "timestamp without time zone",
+        "nullable": "YES"
+      }
+    },
+    "price_details": {
+      "type": "Object",
+      "postgresql": {
+        "columnName": "price_details",
+        "dataType": "json",
+        "nullable": "YES"
+      }
+    },
+    "input_details": {
+      "type": "Object",
+      "postgresql": {
+        "columnName": "input_details",
+        "dataType": "json",
+        "nullable": "YES"
+      }
+    },
+    "draft_type": {
+      "type": "Number",
+      "description": [
+        "Separate between affiliates and normal booking",
+        "1 - Normal Booking",
+        "2 - Affiliate Booking"
+      ],
+      "postgresql": {
+        "columnName": "draft_type",
+        "dataType": "smallint",
+        "nullable": "YES"
+      }
+    },
+    "commission": {
+      "type": "Number",
+      "description": "Commission amount in booking currency for affiliates",
+      "postgresql": {
+        "columnName": "commission",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "commission_percent": {
+      "type": "Number",
+      "description": "Commission percent compared to totalBooking",
+      "postgresql": {
+        "columnName": "commission_percent",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "discount": {
+      "type": "Number",
+      "description": "Discount amount in booking currency for normal booking",
+      "postgresql": {
+        "columnName": "discount",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "discount_percent": {
+      "type": "Number",
+      "description": "discount percent compared to totalBooking",
+      "postgresql": {
+        "columnName": "discount_percent",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "vat": {
+      "type": "Number",
+      "description": "Vat deducted amount in booking currency",
+      "postgresql": {
+        "columnName": "vat",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "vat_percent": {
+      "type": "Number",
+      "description": "vat percent compared to totalBooking",
+      "postgresql": {
+        "columnName": "vat_percent",
+        "dataType": "float",
+        "nullable": "YES"
+      }
+    },
+    "created_at": {
+      "type": "Date",
+      "default": "$now",
+      "required": true,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "Date",
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "YES"
+      }
+    }
+  }
+}

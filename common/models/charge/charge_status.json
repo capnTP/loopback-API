@@ -1,0 +1,62 @@
+{
+  "name": "ChargeStatus",
+  "values": [
+    "1 - Created",
+    "2 - Settled",
+    "3 - Pending Removal",
+    "4 - Removed",
+    "5 - Pending Refund",
+    "6 - Refunded",
+    "7 - Pending Creation",
+    "8 - Pending Settlement"
+  ],
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "charge_status"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "id": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "serial",
+        "nullable": "NO"
+      }
+    },
+    "name": {
+      "type": "String",
+      "length": null,
+      "required": true,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "character varying",
+        "dataLength": null,
+        "nullable": "NO"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "default": "$now",
+      "required": true,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "date",
+      "required": false,
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "YES"
+      }
+    }
+  }
+}

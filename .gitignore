@@ -1,0 +1,36 @@
+*.csv
+*.dat
+*.iml
+*.log
+*.out
+*.pid
+*.seed
+*.sublime-*
+*.swo
+*.swp
+*.tgz
+*.xml
+.DS_Store
+.idea
+.build
+.project
+.strong-pm
+coverage
+node_modules
+npm-debug.log
+.admin.build
+*.env
+.vscode
+server/datasources.test.js
+server/*.local.*
+TODO
+
+# Test coverage
+.nyc_output
+.nycrc
+
+# For local docker development
+docker-compose.yml
+
+# Vouchers generated from HTML
+common/template/voucher/*.pdf

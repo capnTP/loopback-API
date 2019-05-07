@@ -1,0 +1,147 @@
+doctype html
+html
+  head
+    title Invoice Affiliates
+    link(href="https://fonts.googleapis.com/css?family=Raleway", rel="stylesheet")
+    style
+      include ./css/invoice_style.css
+  body
+    div.wrapper-invoice-content
+      div.row.wrapper-header-section
+        div.col-4
+          img(src=logoPath)
+        div.col-8
+          h1 #{header}
+      div.section-line-witout-bottom-pad
+      div.wrapper-middle-section
+        div.row
+          div.col-5
+            div.wrapper-address-to
+              span.label To: 
+              span #{toName}
+              p.to-address #{toAddress}
+              - var taxID = taxId;
+              #taxID
+                if taxID
+                  span.label Tax ID: 
+                  span #{taxId}
+          div.col-7
+            div.col-4.three-box-top
+              span.box-label REF NO.
+              span.box-data #{refNo}
+            div.col-4.three-box-top
+              span.box-label ISSUE DATE
+              span.box-data #{issueDate}
+            div.col-4.three-box-top
+              span.box-label PAYMENT DUE
+              span.box-data #{paymentDue}
+      div.section-line
+      div.wrapper-remark-section
+        div.row
+          div.col-12
+            span.label Remarks: 
+            span.remark #{remark}
+      div.wrapper-table-section
+        div.row
+          table
+            thead.table-light-green
+              th(width="15%")
+                strong DATE
+              th(width="67%")
+                strong DESCRIPTION
+              th(width="18%").text-right
+                strong AMOUNT (#{currencyCode})
+            tbody
+              - var jsonDataTableArray = JSON.parse(JSON.stringify(tableData));
+              - var nMax = jsonDataTableArray.length;
+              - for (var i = 0; i < nMax; i++) {
+                tr
+                  td= jsonDataTableArray[i].date
+                  td= jsonDataTableArray[i].description
+                    p(style={ 'font-style': "italic" }) trip date: #{jsonDataTableArray[i].tripDate}
+                    ul
+                      - var pax = jsonDataTableArray[i].details;
+                      #pax
+                        if pax.adult_pax > 0
+                          li Adult - #{pax.adult_pax}
+                        if pax.child_pax > 0
+                          li Children - #{pax.child_pax}
+                        if pax.infant_pax > 0
+                          li Infant - #{pax.infant_pax}
+                        //- each val, index in jsonDataTableArray[i].details
+                        //- li= index + ' x' + val
+                  //- td
+                  //-   - for (var j = 0; j < jsonDataTableArray[i].description.length; j++){
+                  //-     span.td-description= jsonDataTableArray[i].description[j]
+                  //-   - }
+                  td.text-right= jsonDataTableArray[i].amount
+              - }
+              tr.table-light-green
+                td
+                td.text-right
+                  span
+                    strong SUB TOTAL
+                td.text-right
+                  span
+                    strong #{subTotal}
+              - var optionArray = JSON.parse(JSON.stringify(optionData));
+              - for (var i = 0; i < optionArray.length; i++) {
+                tr
+                  td
+                  td
+                    span= optionArray[i].optionName
+                  td.text-right
+                    span= optionArray[i].amount
+              - }
+              tr.table-green
+                td
+                td.text-right
+                  span
+                    strong GRAND TOTAL
+                td.text-right
+                  span
+                    strong #{grandTotal}
+      - var pOptions = JSON.parse(JSON.stringify(paymentOptions));
+      div.wrapper-bank-detail
+        div.row
+          span
+            strong Please find our bank details down below: 
+          hr
+          //- span #{pOptions.text}
+        div.row
+          table
+            tr
+              td(width="15%")
+                strong Bank Name:
+              td(width="50%") #{pOptions.bankName}
+              td(width="15%")
+                strong Account Name:
+              td(width="20%") #{pOptions.accountName}
+            tr
+              td
+                strong Bank Address:
+              td #{pOptions.bankAddress}
+              td
+                strong Account No:
+              td #{pOptions.accountNo}
+            tr
+              td
+                strong Branch:
+              td #{pOptions.branch}
+              td
+                strong SWIFT Code:
+              td #{pOptions.swiftCode}
+      div.section-line
+      - var fData = JSON.parse(JSON.stringify(footerData));
+      div.footer-address
+        span #{fData.companyAddres}
+        span #{fData.phone}
+- if (voucherStatus === 'PAID') {
+  div.voucher-paid
+    span
+      strong PAID
+- } else if (voucherStatus === 'CANCELED') {
+  div.voucher-cancelled
+    span
+      strong CANCELLED
+- }

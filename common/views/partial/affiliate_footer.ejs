@@ -1,0 +1,24 @@
+<div class="footer" style="margin: 20px 0">
+  <div class="greyContent" style="background-color: rgba(54, 52, 54, 0.05);">
+    <% if(is_no_reply) { %>
+    <div class="secondBlock" style="border-bottom: solid 2px rgba(54, 52, 54, 0.1);">
+      <div style="padding: 20px 40px;font-size: 12px;text-align: center;color: #363436;">
+        <div style="text-align: center"><%= paragraph_to_email %>
+          <span style="
+       color: #4cac87;
+       ">
+       <a style="font-weight: bold; color: #4cac87;text-decoration: none;" href="#"><%= to_email %></a></span>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <% if (affiliate_address) { %>
+    <div>
+      <div style="padding: 20px 40px;font-size: 12px;text-align: center;color: #363436;">
+        <div style="text-align: center"><a style="color: black;text-decoration: none;" href="#"><%= affiliate_address %></a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>

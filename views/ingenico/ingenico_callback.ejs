@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    </head>
+    <body>
+        <div id="payment_reject" style="display:none;">
+            <div align="center"><br><h3>We are sorry but your transaction cannot be proceeded. Please try again with correct payment detail.</h3></div>
+            <!-- <div align="center"><img src="cannot.png" alt=""></div> -->
+        </div>
+        <script>
+            let dataPassed = <%- JSON.stringify(data) %>;
+
+            let win, method;
+            if (dataPassed.redirect_type) {
+                win = opener;
+                method = 'redirects';
+            } else {
+                win = window.parent;
+                method = 'cards';
+            }
+            let _book = 0, _payment = 0
+            if (dataPassed.bookingData != undefined) _book = dataPassed.bookingData
+            if (dataPassed.paymentData != undefined) _payment = dataPassed.paymentData
+
+            let customer = dataPassed.paymentData;
+            let data = {
+                    theasia : 'better than now',
+                    id : 'ingenico',
+                    status: dataPassed.status,
+                    success: dataPassed.status==200?true:false,
+                    book: _book,
+                    payment: _payment,
+                    customer: customer,
+                    origin: dataPassed.origin
+                };
+            // if (!data.success){
+            //     var element = document.getElementById("payment_reject");
+            //     element.style.display = "block";
+            // }
+            try {
+
+                win.postMessage(data, "*");
+
+
+            } catch (e) {
+                console.log('catch exception from '+method+' : ' + e);
+            }
+        </script>
+    </body>
+</html>

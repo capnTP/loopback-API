@@ -1,0 +1,108 @@
+<div class="footer" style="margin: 20px 0">
+  <div class="greyContent" style="background-color: rgba(54, 52, 54, 0.05);">
+    <div class="firstBlock" style="padding: 30px;border-bottom: solid 2px rgba(54, 52, 54, 0.1);">
+      <div class="leftBlock" style="
+    display: inline-block;
+    text-align: left;
+    margin-right: 100px;
+    margin-top: 10px;
+    ">
+        <div class="logo" style="margin-bottom: 20px;text-align: left;">
+          <a href="https://www.theasia.com" target="_blank">
+            <img width="80%" src="https://theasia.imgix.net/logo/theasia.png">
+          </a>
+        </div>
+        <div style="margin-bottom: 10px;
+       ">
+          <b style="
+          color: black;
+          "><%= follow_us %></b>
+        </div>
+        <div class="icons">
+          <a target="blank" href="https://www.facebook.com/theasiatrip/">
+            <img src="http://theasia.imgix.net/emails/v2/facebook.png" style="
+            margin-right: 5px;
+            border-radius: 5px;
+            height: 24px;
+            " alt="facebook" />
+          </a>
+
+          <a target="blank" href="https://plus.google.com/u/1/+TheAsiatrip">
+            <img src="http://theasia.imgix.net/emails/v2/googleplus.png" style="
+                margin-right: 5px;
+                border-radius: 5px;
+                height: 24px;
+            " alt="G+" />
+          </a>
+
+          <a target="blank" href="https://www.instagram.com/theasiatrip/">
+            <img src="http://theasia.imgix.net/emails/v2/instagram.png" style="
+                margin-right: 5px;
+                border-radius: 5px;
+            " alt="Instagram" />
+          </a>
+
+          <a target="blank" href="https://twitter.com/TheAsiatrip">
+            <img src="http://theasia.imgix.net/emails/v2/twitter.png" alt="twitter" style="
+                margin-right: 5px;
+                border-radius: 5px;
+            " />
+          </a>
+
+          <!-- <img src="http://theasia.imgix.net/emails/v2/chat.png" style="
+              margin-right: 5px;
+              border-radius: 5px;
+          " alt="wechat" /> -->
+
+          <a target="blank" href="https://www.youtube.com/channel/UCIpxAr7evn3cQ3vZU_W7t2g?view_as=subscriber">
+            <img src="http://theasia.imgix.net/emails/v2/youtube.png" style="
+                margin-right: 5px;
+                border-radius: 5px;
+            " alt="youtube" />
+          </a>
+        </div>
+
+
+      </div>
+      <div class="rightBlock" style="
+    display: inline-block;
+    margin-top: 10px;
+    ">
+        <ul style="
+        list-style: none;
+        margin-top: 5px;
+        padding: 0;
+        font-size: 12px;">
+          <li style="
+          margin-bottom: 10px;
+          "><a style="text-decoration: none; color: black;" target="blank" href="https://www.theasia.com/contact-us/" ><%= contact_support %></a></li>
+          <li style="
+          margin-bottom: 10px;
+          "><a style="text-decoration: none; color: black;" target="blank" href="https://www.theasia.com/about-us" ><%= about %> TheAsia.com</a></li>
+          <li style="
+          margin-bottom: 10px;
+          "><a style="text-decoration: none; color: black;" target="blank" href="https://www.theasia.com/terms/" ><%= privacy_policy %></a></li>
+        </ul>
+      </div>
+    </div>
+    <% if(is_no_reply) { %>
+    <div class="secondBlock" style="border-bottom: solid 2px rgba(54, 52, 54, 0.1);">
+      <div style="padding: 20px 40px;font-size: 12px;text-align: center;color: #363436;">
+        <div style="text-align: center"><%= paragraph_to_email %>
+          <span style="
+       color: #4cac87;
+       ">
+       <a style="font-weight: bold; color: #4cac87;text-decoration: none;" target="blank" href="#"><%= to_email %></a></span>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <div>
+      <div style="padding: 20px 40px;font-size: 12px;text-align: center;color: #363436;">
+        <div style="text-align: center"><a style="color: black;text-decoration: none;" href="#">This email was sent by Lotus Travel Pte.Ltd (TheAsia.com), registered at
+          <br>120 Lower Delta House #01-03 Cendex Centre Singapore 169208</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

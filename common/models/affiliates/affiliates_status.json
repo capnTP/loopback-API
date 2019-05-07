@@ -1,0 +1,45 @@
+{
+  "name": "AffiliatesStatus",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": false,
+    "postgresql": {
+      "schema": "main",
+      "table": "affiliates_status"
+    }
+  },
+  "mixins": {},
+  "properties": {
+    "text": {
+      "type": "String",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "text",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "value": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "value",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    }
+  }
+}

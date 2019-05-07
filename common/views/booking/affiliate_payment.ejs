@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <% for (let i=0; i<font_family_name_link.length; i++) { %>
+        <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+        <% } %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+  </style>
+</head>
+
+<body>
+  <div style="
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 20px;
+  font-family: <%= font_family_name_name %>;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #363436;
+">
+    <div>
+        <div style="height: 70px;display: table;width: 100%;border-bottom: solid 2px rgba(54, 52, 54, 0.1);font-size: 14px;">
+            <div style="height: 30px;display: table-cell;vertical-align: middle;">
+              <img src="https://theasia.imgix.net/logo/theasia.png">
+            </div>
+          </div>
+      <div class="content" style="margin-top: 30px;font-size: 14px;">
+        <h1 style="color: #363436;font-family: <%= font_family_name_name %>;"><%= main_topic_before %><%= main_topic_after %></h1>
+        <div>
+          <%= paragraph1_1 %>
+          <b style="color:#4cac87"><%= product_name %></b>
+          <%= paragraph1_2 %>
+          <b style="color:#4cac87"><%= trip_date %></b>
+          <%= paragraph1_3 %>
+        </div>
+        <div class="action-content" style="margin: 30px 0">
+            <a href="<%= payment_url %>" style="padding: 10px;
+            border-radius: 3px;
+            background-image: linear-gradient(to right, #ff8733, #ffc32c);
+            outline: none;
+            border: none;
+            text-decoration: none;">
+              <span style=" padding: 30px;
+            font-family: <%= font_family_name_name %>;
+            font-size: 16px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;"><%= complete_button %></span>
+            </a>
+          </div>
+        <div style="
+          width: 600px;
+          font-family: <%= font_family_name_name %>;
+          font-size: 18px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.56;
+          letter-spacing: normal;
+          color: #363436;
+          text-shadow: 0 0 black;">
+          <div style="margin-top:1em;width:100%; display: inline-block;">
+              <span style="display: inline-block;"><%= booking_number_label %>:</span>
+              <span style="display: inline-block; color: #ff8733; width: 70%; float: right;">#<%= booking_no %></span>
+            </div>
+          <div style="margin-top:1em;width:100%; display: inline-block;">
+            <span style="display: inline-block; font-size: 16px;"><%= tour_name %></span>
+            <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 70%; float: right;"><%= product_name %></span>
+          </div>
+          <div style="width:100%; display: inline-block;">
+            <span style="display: inline-block; font-size: 16px;"><%= no_of_pax %></span>
+            <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 70%; float: right;"><%= total_pax %></span>
+          </div>
+          <div style="width:100%; display: inline-block;">
+            <span style="display: inline-block; font-size: 16px;"><%= traveler_name %></span>
+            <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 70%; float: right;"><%= name %></span>
+          </div>
+          <% if(passport_number) { %>
+          <div style="width:100%; display: inline-block;">
+            <span style="display: inline-block; font-size: 16px;"><%= passport_no %></span>
+            <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 70%; float: right;"><%= passport_number %></span>
+          </div>
+          <% } %>
+          <div style="width:100%; display: inline-block;">
+            <span style="display: inline-block; font-size: 16px;"><%= departure_date %></span>
+            <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 70%; float: right;"><%= trip_date %></span>
+          </div>
+          <div style="width:100%; display: inline-block;">
+            <span style="display: inline-block; font-size: 16px;"><%= cancelation_policy %></span>
+            <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 70%; float: right;"><%= cancellation_policy %><br/><%= cancellation_policy_description %></span>
+          </div>
+          <div style="width:100%; display: inline-block;">
+            <span style="display: inline-block; font-size: 16px;"><%= total_price %></span>
+            <span style="display: inline-block; font-size: 16px; font-weight: normal; width: 70%; float: right;"><%= total %> <%= currency_code %></span>
+          </div>
+        </div>
+        <div style="margin-top:1em;width:100%;">
+            <p><%= paragraph2 %></p>
+            <p>
+              <%= paragraph2_1 %><%= paragraph2_2 %>
+            </p>
+        </div>
+        
+        <div>
+          <span style="margin-bottom: 4px"><%= regards %></span>
+          <div style="color: #4cac87;font-weight: bold;"><a style="font-weight: bold; color: #4cac87;text-decoration: none;" href="#">TheAsia.com</a></div>
+        </div>
+        <%- include('../partial/affiliate_footer.ejs') %>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

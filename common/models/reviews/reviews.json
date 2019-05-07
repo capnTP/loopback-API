@@ -1,0 +1,292 @@
+{
+    "name": "Reviews",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true,
+      "postgresql": {
+        "schema": "main",
+        "table": "reviews"
+      },
+      "relations": {}
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "review_title": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "review_title",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "comment": {
+        "type": "String",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "comment",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "review": {
+        "type": "String",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "review",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "reviewer_name": {
+        "type": "String",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "reviewer_name",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "yes"
+        }
+      },
+      "rating": {
+        "type": "Number",
+        "required": true,
+        "default":5,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "rating",
+          "dataType": "smallint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "recommend": {
+        "type": "boolean",
+        "required":false,
+        "default":true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "recommend",
+          "dataType": "bool",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "tour_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "tour_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "language_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "language_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "nationality": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "nationality",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "group_size": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "group_size",
+          "dataType": "smallint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "sub_product_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "sub_product_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "user_id": {
+        "type": "Number",
+        "required": false,
+        "default":0,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "user_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "booking_id": {
+        "type": "Number",
+        "required": true,
+        "default":0,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "booking_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "status": {
+        "type": "Number",
+        "default": 0,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+            "columnName": "status",
+            "dataType": "smallint",
+            "dataLength": null,
+            "dataPrecision": null,
+            "dataScale": 0,
+            "nullable": "NO"
+        }
+      },
+      "created_at": {
+        "type": "Date",
+        "default": "$now",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "created_at",
+          "dataType": "timestamp without time zone",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "updated_at": {
+        "type": "Date",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "updated_at",
+          "dataType": "timestamp without time zone",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      }
+    },
+    "acls" :[
+        {
+            "accessType": "*",
+            "principalType": "ROLE",
+            "principalId": "$authenticated",
+            "property": "create",
+            "permission": "ALLOW"
+        },
+        {
+          "accessType": "*",
+          "principalType": "ROLE",
+          "principalId": "$everyone",
+          "property": "*",
+          "permission": "ALLOW"
+        }
+      ]
+  }

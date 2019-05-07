@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <% for (let i=0; i<font_family_name_link.length; i++) { %>
+        <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+        <% } %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+    a {
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+<div class="email_template" style="
+max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: <%= font_family_name_name %>;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #363436;
+">
+    <div>
+      <div>
+        <div style="height: 70px;display: table;width: 100%;border-bottom: solid 2px rgba(54, 52, 54, 0.1);font-size: 14px;">
+          <div style="height: 30px;display: table-cell;vertical-align: middle;">
+            <img src="https://theasia.imgix.net/logo/theasia.png">
+          </div>
+        </div>
+        <div class="content" style="margin-top: 30px;font-size: 14px;">
+          <h1 style="color: #363436;font-family: <%= font_family_name_name %>;"><%= text0 %></h1>
+          <span style="font-family: <%= font_family_name_name %>;
+            font-size: 14px;
+            font-weight: 300;"><strong><%= hey %> <%= reviewer_name %> <%= hey_after %></strong>
+          </span><br>
+          <span>
+            <%= h1 %>
+          </span>
+
+          <div class="action-content" style="margin: 25px 0;">
+            <a href="<%= url %>" style="padding: 10px;
+          border-radius: 3px;
+          background-image: linear-gradient(to right, #ff8733, #ffc32c);border: none;">
+              <span style=" padding: 30px;
+            font-family: <%= font_family_name_name %>;
+            font-size: 16px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;"><%= visit %></span>
+            </a>
+          </div>
+          <span style="font-family: <%= font_family_name_name %>;
+            font-size: 14px;
+            font-weight: 300;"><strong><%= text1 %></strong>
+          </span><br>
+          <div style="margin-bottom: 4px; margin-top: 25px;">
+            <span><%= regards %></span>
+            <div style="color: #4cac87;font-weight: bold;"><a style="font-weight: bold; color: #4cac87;text-decoration: none;" target="blank" href="#">TheAsia.com</a></div>
+          <p>
+            <span><%= newsletter %></span>
+          </p>
+          <p><a href="<%= url %>" style="padding: 10px;
+            border-radius: 3px;
+            background-image: linear-gradient(to right, #ff8733, #ffc32c);
+            outline: none;
+            border: none;">
+            <span style=" padding: 30px;
+            font-family: <%= font_family_name_name %>;
+            font-size: 16px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #ffffff;"><%= subscribe_button %></span>
+          </a></p>
+          </div>
+          <%- include('../partial/footer.ejs') %>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "main_topic_before": "订单 ",
+  "main_topic_after": " 支付链接",
+  "paragraph1_1": "您的订单编号 #18001234，行程名称：",
+  "paragraph1_2": "，出发日期  ",
+  "paragraph1_3": "，订单已确认，请点击以下链接进行支付以完成预定。",
+  "booking_number_label": "订单号码",
+  "complete_button": "完成预定",
+  "booking_detail" : "预定详情：",
+  "tour_name": "行程名称 : ",
+  "no_of_pax": "出行人数: ",
+  "traveler_name": "客人姓名 :",
+  "passport_no": "护照号码.: ",
+  "departure_date": "出发日期:  ",
+  "cancelation_policy": "取消条款：",
+  "total_price": "价格合计：",
+  "paragraph2": "请仔细核对以上信息，如有任何问题请与我们联系。",
+  "paragraph2_1": "确认无误后请在24小时之内点击",
+  "paragraph2_2": ",完成支付，否则，系统将会自动取消此订单。",
+  "regards": "感谢您的合作"
+}

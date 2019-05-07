@@ -1,0 +1,160 @@
+{
+    "name": "Notes",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "notes"
+      },
+      "relations": {
+        "notesBookingIdFkeyrel": {
+          "model": "Booking",
+          "type": "belongsTo",
+          "foreignKey": "booking_id"
+        },
+        "notesUserIdFkeyrel":{
+         "model": "Users",
+         "type": "belongsTo",
+         "foreignKey": "user_id"                
+        }
+      }
+    },
+    "mixins": {
+       "TimeStamp": { "createdAt": "created_at", "updatedAt": "updated_at" },
+       "Activity":{}
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "booking_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "booking_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "user_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "user_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "note": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "note",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "channel": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "channel",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "from": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "from",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "is_public": {
+        "type": "Boolean",
+        "postgresql": {
+          "columnName": "is_public",
+          "dataType": "bool",
+          "nullable": "YES"
+        }
+      },
+      "created_at": {
+        "type": "Date",
+        "default": "$now",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "created_at",
+          "dataType": "timestamp without time zone",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "updated_at": {
+        "type": "Date",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "updated_at",
+          "dataType": "timestamp without time zone",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      }
+    }
+  }
+  

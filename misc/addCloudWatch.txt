@@ -1,0 +1,24 @@
+# Adding Cloud watch logs
+
+Step1. Make sure you have Log group exist
+
+Step2 :  add log configuration in taskdef.json/taskdef-dev.json baes on app, code given below
+
+Code :
+
+```
+"logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "cloud-watch log group",
+          "awslogs-region": "ap-southeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+
+```
+
+Step4: Deploy Code to ecs
+
+Step5 Check Cloud watch logs
+

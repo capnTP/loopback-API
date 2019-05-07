@@ -1,0 +1,90 @@
+{
+  "name": "UserSocials",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true ,
+    "postgresql": {
+      "schema": "main",
+      "table": "user_socials"
+    },
+    "relations": {
+      "User": {
+        "model": "Users",
+        "type": "belongsTo",
+        "foreignKey": "user_id"
+      }
+    }
+  },
+  "mixins": {
+     "LogsManagement": {},
+     "Activity":{}
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "user_id": {
+      "type": "number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "social_id": {
+      "type": "string",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "index": {"unique": true} ,
+      "postgresql": {
+        "columnName": "social_id",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "social_type": {
+      "type": "string",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "index": {"unique": true} ,
+      "postgresql": {
+        "columnName": "social_type",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls" :[
+  ]
+}

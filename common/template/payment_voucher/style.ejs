@@ -1,0 +1,232 @@
+<style>
+    /*
+    * Main layout files share with every template
+    * This layout use 12 grid system like bootstrap
+    * Please make sure everytime if you wanna edit this layout because it will effect to every template that used 
+    */
+    html, body {
+      padding: 0 !important;
+      margin: 0 !important;
+      font-family: 'Raleway', sans-serif; }
+    
+    .container {
+      padding: 0 !important;
+      margin: 0 !important; }
+    
+    /*
+    * row layout section for use with 12 grid like boostrap
+    * but no padding left and right
+    */
+    .row {
+      width: 100%; }
+    
+    /*
+    * column layout section use 12 grid like boostrap
+    * but no padding left and right
+    */
+    .col-1 {
+      width: 8.33%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-2 {
+      width: 16.66%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-3 {
+      width: 25%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-4 {
+      width: 33.33%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-5 {
+      width: 41.66%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-6 {
+      width: 50%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-7 {
+      width: 58.33%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-8 {
+      width: 66.66%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-9 {
+      width: 75%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-10 {
+      width: 83.33%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-11 {
+      width: 91.66%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    .col-12 {
+      width: 100%;
+      display: inline-block;
+      vertical-align: text-top; }
+    
+    /*
+    * content wrapper
+    *
+    */
+    .text-right {
+      text-align: right; 
+    }
+    .content-no-left {
+      padding-left: 0;
+      padding-right: 1em; }
+    
+    .content {
+      padding-left: 1em;
+      padding-right: 1em;
+      display: block; }
+    
+    .content-no-right {
+      padding-left: 1em;
+      padding-right: 0; }
+    .section-line {
+      width: 100%;
+      display: block;
+      border-bottom: #DCD9D9 1px solid;
+      margin-top: .7em;
+      margin-bottom: .1em; }
+    
+    .section-line-witout-bottom-pad {
+      width: 100%;
+      display: block;
+      border-bottom: #DCD9D9 1px solid;
+      margin-top: .7em; }
+    
+    /* .wrapper-invoice-content {
+      margin: 3em 3em 2em 3em; 
+    } */
+      .wrapper-invoice-content .wrapper-header-section {
+        text-align: center; }
+        .wrapper-invoice-content .wrapper-header-section img {
+          width: 100%; }
+        .wrapper-invoice-content .wrapper-header-section h1 {
+          margin-top: .2em !important; }
+      .wrapper-invoice-content .label {
+        font-weight: 800; }
+      .wrapper-invoice-content .wrapper-middle-section {
+        display: block;
+        margin-left: 1em;
+        margin-right: 1em; }
+        .wrapper-invoice-content .wrapper-middle-section .wrapper-address-to {
+          font-size: .8em;
+          padding-top: 3em;
+          padding-bottom: 3em; }
+          .wrapper-invoice-content .wrapper-middle-section .wrapper-address-to .to-address {
+            display: block;
+            padding-right: 1em; }
+        .wrapper-invoice-content .wrapper-middle-section .three-box-top {
+          font-size: .8em;
+          box-sizing: border-box;
+          border-left: 1px solid #DCD9D9;
+          border-right: 1px solid #DCD9D9;
+          border-bottom: 1px solid #DCD9D9; }
+          .wrapper-invoice-content .wrapper-middle-section .three-box-top .box-label {
+            display: block;
+            width: 100%;
+            color: #847E7F;
+            font-weight: 800;
+            padding-left: .3em; }
+          .wrapper-invoice-content .wrapper-middle-section .three-box-top .box-data {
+            display: block;
+            width: 100%;
+            color: #363436;
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            text-align: center;
+            font-weight: 800; }
+      .wrapper-invoice-content .wrapper-remark-section {
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 1em;
+        margin-bottom: 2em; }
+        .wrapper-invoice-content .wrapper-remark-section .remark {
+          font-size: .8em; }
+      .wrapper-invoice-content .wrapper-table-section {
+        min-height: 520px; }
+        .wrapper-invoice-content .wrapper-table-section table {
+          text-align: left;
+          font-size: 14px;
+          border-collapse: collapse; }
+        .wrapper-invoice-content .wrapper-table-section td {
+          padding: .5em; }
+        .wrapper-invoice-content .wrapper-table-section th {
+          padding: .5em; }
+        .wrapper-invoice-content .wrapper-table-section table, .wrapper-invoice-content .wrapper-table-section th, .wrapper-invoice-content .wrapper-table-section td {
+          border: 1px solid #DCD9D9; }
+        .wrapper-invoice-content .wrapper-table-section .table-light-green {
+          background-color: #daede1; }
+        .wrapper-invoice-content .wrapper-table-section .table-green {
+          background-color: #a2d0b9; }
+        .wrapper-invoice-content .wrapper-table-section .td-description {
+          display: block;
+          width: 100%; }
+        .wrapper-invoice-content .wrapper-table-section .text-right {
+          text-align: right; }
+      .wrapper-invoice-content .wrapper-bank-detail {
+        padding-top: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 12px; }
+        .wrapper-invoice-content .wrapper-bank-detail table {
+          font-size: 12px; }
+        .wrapper-invoice-content .wrapper-bank-detail tr {
+          padding-top: .3em;
+          padding-bottom: .3em; }
+      .wrapper-invoice-content .footer-address {
+        padding-top: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        font-size: 12px; }
+        .wrapper-invoice-content .footer-address span {
+          display: block;
+          width: 100%; }
+    .voucher-notice-data{
+      color: #4CAC87;
+      font-weight: bolder;
+    }
+    .voucher-paid {
+      position: fixed;
+      top: 200px;
+      right: 150px;
+      z-index: 9999;
+      color: #4CAC87;
+      font-size: 4em;
+      display: block;
+      transform: rotate(350deg);
+      font-weight: bolder; }
+    
+    .voucher-cancelled {
+      position: fixed;
+      top: 200px;
+      right: 150px;
+      z-index: 9999;
+      color: #ff5064;
+      font-size: 4em;
+      display: block;
+      transform: rotate(350deg);
+      font-weight: bolder; }
+</style>

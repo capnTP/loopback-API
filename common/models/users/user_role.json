@@ -1,0 +1,60 @@
+{
+    "name": "UserRole",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "user_role"
+      }
+    },
+    "mixins": {},
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "user_id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "require":true,
+        "postgresql": {
+          "columnName": "user_id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "role_type_id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "require":true,
+        "postgresql": {
+          "columnName": "role_type_id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      }
+    }
+  }

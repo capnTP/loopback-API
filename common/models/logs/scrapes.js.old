@@ -1,0 +1,139 @@
+// const axios = require('axios')
+// const cheerio = require('cheerio')
+// const _ = require('lodash')
+// const moment = require('moment')
+// const xml2js = require('xml2js')
+// const { uploadToS3 } = require('../../helpers/aws')
+// const { xml2Json, json2xml } = require('../../helpers/xml')
+// const { getSafe, newLoopbackError, HTTPStatusCode: { SERVER_ERROR } } = require('../../utility')
+
+// // TODO: url from central config file?
+// const BASE_CRAWL_URL = process.env.BASE_CRAWL_URL || 'https://www.theasia.com'
+// const JENKINS_URL = process.env.JENKINS_URL || 'http://jenkins.theasiadev.com:8080'
+// const JENKINS_USERNAME = process.env.JENKINS_USERNAME || 'rachanon'
+// const JENKINS_API_TOKEN = process.env.JENKINS_API_TOKEN || 'eb7bd62bf918f17cb1052bfe54a504df'
+// const CRONJOB_NAME = 'SCRAPE'
+
+// module.exports = function (Scrapes) {
+//   Scrapes.scrape = async (slug, language) => {
+//     const prefix = Scrapes.getLanguageUrl(language)
+//     const url = `${BASE_CRAWL_URL}${prefix}${slug}`
+//     const { data: html } = await axios.get(url)
+//     const $ = cheerio.load(html)
+//     const metaTitle = $('title').text()
+//     const metaDescription = $('meta[name="description"]').attr('content')
+//     const metaRobots = $('meta[name="robots"]').attr('content')
+//     const scrapeData = {
+//       url,
+//       page_type: 'product',
+//       size: Math.round(Buffer.byteLength(html) / 1024),
+//       page_title: metaTitle,
+//       meta_description: metaDescription,
+//       meta_robots: metaRobots,
+//     }
+//     const scrapeRecord = await Scrapes.create(scrapeData)
+//     const s3FileName = `${scrapeRecord.id}_${language}_${slug.substring(slug.lastIndexOf('/') + 1)}.html`
+//     return uploadToS3('theasia-engineering', s3FileName, html, 'text/html')
+//   }
+
+//   Scrapes.remoteMethod('scrape', {
+//     accepts: [
+//       { arg: 'slug', type: 'string', description: 'Slug to scrape' },
+//     ],
+//     returns: { type: 'Object', root: true },
+//     http: { path: '/scrape', verb: 'post' },
+//   })
+
+//   Scrapes.getLanguageUrl = (language) => {
+//     switch (language) {
+//       case 'en':
+//         return ''
+//       case 'ko':
+//         return '/ko'
+//       case 'zh':
+//         return '/zh'
+//       case 'th':
+//         return '/th'
+//       default:
+//         return ''
+//     }
+//   }
+
+//   Scrapes.scrapeParallel = async (slugs, languages) => {
+//     await Promise.all(languages.map(async (language) => {
+//       await Promise.all(slugs.map(slug => Scrapes.scrape(slug, language)))
+//     }))
+//   }
+
+//   Scrapes.remoteMethod('scrapeParallel', {
+//     accepts: [
+//       { arg: 'slugs', type: ['string'], description: 'Slugs to scrape' },
+//       { arg: 'languages', type: ['string'], description: 'languages to scrape' },
+//     ],
+//     returns: { type: 'Object', root: true },
+//     http: { path: '/scrapeParallel', verb: 'post' },
+//   })
+
+//   Scrapes.updateCron = async (slugs, languages, schedule = true) => {
+//     const configUrl = `${JENKINS_URL}/job/${CRONJOB_NAME}/config.xml`
+//     const { data: xml } = await axios({
+//       method: 'get',
+//       url: configUrl,
+//       auth: { username: JENKINS_USERNAME, password: JENKINS_API_TOKEN },
+//     })
+//     const json = await xml2Json(xml)
+//     let command = json.project.builders[0]['hudson.tasks.Shell'][0].command[0]
+//     if (!command) return Promise.reject(newLoopbackError(SERVER_ERROR, 'SERVER_ERROR', 'Command in cronjob not found'))
+//     // Update curl command
+//     const slugRegex = /(-d 'slugs=)(.*)(&)/g
+//     const languageRegex = /(&languages=)(.*)(' )/g
+//     if (slugs) {
+//       command = command.replace(slugRegex, `$1${encodeURIComponent(JSON.stringify(slugs))}$3`)
+//     }
+//     if (languages) {
+//       command = command.replace(languageRegex, `$1${encodeURIComponent(JSON.stringify(languages))}$3`)
+//     }
+//     json.project.builders[0]['hudson.tasks.Shell'][0].command[0] = command
+//     // Update build schedule
+//     const defaultCron = 'H/30 * * * *'
+//     let { triggers } = json.project
+//     if (!schedule) {
+//       triggers = ['']
+//     } else if (schedule === 'DEFAULT') {
+//       triggers = [{ 'hudson.triggers.TimerTrigger': [{ spec: [defaultCron] }] }]
+//     } else if (typeof schedule === 'string') {
+//       triggers = [{ 'hudson.triggers.TimerTrigger': [{ spec: [schedule] }] }]
+//     }
+//     json.project.triggers = triggers
+//     const updatedXml = json2xml(json)
+//     const response = await axios({
+//       method: 'post',
+//       url: configUrl,
+//       auth: { username: JENKINS_USERNAME, password: JENKINS_API_TOKEN },
+//       headers: {
+//         'Content-Type': 'text/xml',
+//       },
+//       data: updatedXml,
+//     })
+//     return Promise.resolve(response.data)
+//   }
+
+//   Scrapes.remoteMethod('updateCron', {
+//     accepts: [
+//       { arg: 'slugs', type: ['string'], description: 'type: ["string"], null = no update' },
+//       { arg: 'languages', type: ['string'], description: 'type: ["string"], null = no update' },
+//       {
+//         arg: 'schedule',
+//         type: 'any',
+//         description: [
+//           'if schedule === false, turn it off \n',
+//           'if schedule === true, no update (defaults to true) \n',
+//           'if schdedule === "DEFAULT", default setting of "H/30 * * * *" will be used \n',
+//           'if typeof schedule === "string" other than "DEFAULT", other string will replace cron schedule e.g. "0 * * * *" = every hour at minute 0',
+//         ]
+//       },
+//     ],
+//     returns: { type: 'Object', root: true },
+//     http: { path: '/updateCron', verb: 'post' },
+//   })
+// };

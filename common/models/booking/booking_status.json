@@ -1,0 +1,97 @@
+{
+    "name": "BookingStatus",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "booking_status"
+      },
+      "relations": { 
+        "localization": {
+          "type": "hasMany",
+          "model": "BookingMethodsLang",
+          "foreignKey": "booking_methods_id"
+        }
+      }
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "status_name": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "status_name",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "backend_name": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "backend_name",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "front_name": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "front_name",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "code": {
+        "type": "String",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "code",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      }
+    }
+  }
+  

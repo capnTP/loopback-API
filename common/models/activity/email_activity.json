@@ -1,0 +1,157 @@
+{
+    "name": "EmailActivity",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "email_activity"
+      },
+      "relations": {
+        "activity":{
+         "model": "Activity",
+         "type": "belongsTo",
+         "foreignKey": "activity_id"
+        }
+      }
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "activity_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "activity_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "action_taken": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "action_taken",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "action_result": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "action_result",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "email_data": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "email_data",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "email_template": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "email_template",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "from": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "from",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "to": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "to",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "subject": {
+        "type": "String",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "subject",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      }
+
+    }
+  }

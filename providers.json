@@ -1,0 +1,60 @@
+{
+  "facebook-login": {
+    "provider": "facebook",
+    "module": "passport-facebook",
+    "profileFields": ["gender", "link", "locale", "name", "timezone",
+      "verified", "email", "updated_time"],
+    "clientID": "1752236044817571",
+    "clientSecret": "041d12ef1545e447c9ec4b4a5b4c9d6d",
+    "callbackURL": "/auth/facebook/callback",
+    "authPath": "/auth/facebook",
+    "callbackPath": "/auth/facebook/callback",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/login",
+    "scope": ["email"],
+    "failureFlash": true
+  },
+  "google-login": {
+    "provider": "google",
+    "module": "passport-google-oauth",
+    "strategy": "OAuth2Strategy",
+    "clientID": "905274823447-v59u6c71pc05ie3g80cnotol69pm03iv.apps.googleusercontent.com",
+    "clientSecret": "vnqKJmcpIfHmCh4gT1Zd6g8F",
+    "callbackURL": "/auth/google/callback",
+    "authPath": "/auth/google",
+    "callbackPath": "/auth/google/callback",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/login",
+    "scope": ["email", "profile"],
+    "failureFlash": true
+  },
+  "facebook-link": {
+    "provider": "facebook",
+    "module": "passport-facebook",
+    "clientID": "1752236044817571",
+    "clientSecret": "041d12ef1545e447c9ec4b4a5b4c9d6d",
+    "callbackURL": "/link/facebook/callback",
+    "authPath": "/link/facebook",
+    "callbackPath": "/link/facebook/callback",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/login",
+    "scope": ["email", "user_likes"],
+    "link": true,
+    "failureFlash": true
+  },
+  "google-link": {
+    "provider": "google",
+    "module": "passport-google-oauth",
+    "strategy": "OAuth2Strategy",
+    "clientID": "905274823447-v59u6c71pc05ie3g80cnotol69pm03iv.apps.googleusercontent.com",
+    "clientSecret": "vnqKJmcpIfHmCh4gT1Zd6g8F",
+    "callbackURL": "/link/google/callback",
+    "authPath": "/link/google",
+    "callbackPath": "/link/google/callback",
+    "successRedirect": "/auth/account",
+    "failureRedirect": "/login",
+    "scope": ["email", "profile"],
+    "link": true,
+    "failureFlash": true
+  }
+}

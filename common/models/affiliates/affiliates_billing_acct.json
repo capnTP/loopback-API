@@ -1,0 +1,160 @@
+{
+  "name": "AffiliatesBillingAcct",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "affiliates_billing_acct"
+    },
+    "relations": {
+      "affiliatesIdFkeyrel": {
+        "model": "Affiliates",
+        "type": "belongsTo",
+        "foreignKey": "affiliateId"
+      }
+    }
+  },
+  "mixins": {
+    "TimeStamp": { "createdAt": "created_at", "updatedAt": "updated_at" }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigserial",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "affiliateId": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": true,
+      "postgresql": {
+        "columnName": "affiliateId",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "billing_address": {
+      "type": "Object",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": false,
+      "postgresql": {
+        "columnName": "billing_address",
+        "dataType": "json",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "invoice_email": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": true,
+      "postgresql": {
+        "columnName": "invoice_email",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "contact_number": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_number",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "fax_number": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": false,
+      "postgresql": {
+        "columnName": "fax_number",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "tax_id": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": false,
+      "postgresql": {
+        "columnName": "tax_id",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "created_at": {
+      "type": "Date",
+      "default": "$now",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    }
+  }
+}

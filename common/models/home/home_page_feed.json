@@ -1,0 +1,126 @@
+{
+    "name": "HomePageFeed",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "home_page_feed"
+      },
+      "relations": {
+        "localization": {
+          "type": "hasMany",
+          "model": "HomePageFeedLang",
+          "foreignKey": "home_page_feed_id"
+       }
+      }
+    },
+    "mixins": {},
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "image_url": {
+        "type": "String",
+        "length": null,
+        "default": "placeholder/theasia_placeholder.png",
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "image_url",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "main_text": {
+        "type": "String",
+        "length": null,
+        "required": true,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "main_text",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "secondary_text": {
+        "type": "String",
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "secondary_text",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "secondary_text_link": {
+        "type": "String",
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "secondary_text_link",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "active": {
+        "type": "Boolean",
+        "default": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "active",
+          "dataType": "boolean",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "created_at": {
+        "type": "Date",
+        "default": "$now",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "created_at",
+          "dataType": "timestamp without time zone",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      }
+    }
+  }

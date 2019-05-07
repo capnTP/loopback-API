@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <% for (let i=0; i<font_family_name_link.length; i++) { %>
+        <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+  <% } %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+  </style>
+</head>
+
+<body>
+
+
+  <div style="
+  max-width: 600px;
+    font-size: 14px;
+    padding: 0 20px;
+    margin: 0 auto;
+    font-family: <%= font_family_name_name %>;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #363436;
+    ">
+    <div>
+      <div class="header" style="height: 70px;display: table;width: 100%;font-size: 14px;">
+        <div style="height: 30px;display: table-cell;vertical-align: middle;">
+          <img src="https://theasia.imgix.net/logo/theasia.png">
+        </div>
+      </div>
+      <div class="content" style="font-size: 14px;">
+        <div class="img-container">
+          <img src="http://theasia.imgix.net/emails/v2/takeSurvey.png" style="object-fit: cover;
+          width: 100%;
+          height: 200px;" />
+        </div>
+        <div class="welcome-content" style="margin-top: 46px">
+          <span style="color:black">
+            <b>
+              <%= paragraph_greeting %><%= name %>,</b>
+          </span>
+          <p><%= paragraph1 %>
+            <b style="color:black"><%= paragraph1Time %></b><%= paragraph1After %></p>
+        </div>
+        <div class="action-content" style="margin: 30px 0">
+          <a href="<%= feedback_url %>" style="padding: 10px;
+          border-radius: 3px;
+          background-image: linear-gradient(to right, #ff8733, #ffc32c);
+          outline: none;
+          border: none;
+          text-decoration: none;">
+            <span style=" padding: 30px;
+          font-family: <%= font_family_name_name %>;
+          font-size: 16px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: center;
+          color: #ffffff;"><%= survey_button %></span>
+          </a>
+        </div>
+        <div class="text-content">
+
+          <p style="margin: 30px 0;"><%= paragraph_thank %></p>
+          <p style="margin: 30px 0;">
+            <span><%= regards %></span>
+            <br/>
+            <b style="color:#4cac87"><a style="font-weight: bold; color: #4cac87;text-decoration: none;" target="blank" href="<%= website_url %>"><%= company_name %></a></b>
+          </p>
+        </div>
+
+        <%- include('../partial/footer.ejs') %>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+{
+    "name": "HomePageFeedLang",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "home_page_feed_lang"
+      }
+    },
+    "mixins": {},
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "main_text": {
+        "type": "String",
+        "length": null,
+        "required": true,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "main_text",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "secondary_text": {
+        "type": "String",
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "secondary_text",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "home_page_feed_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "home_page_feed_id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "lang_id": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "lang_id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      }
+    }
+  }

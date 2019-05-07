@@ -1,0 +1,197 @@
+{
+	"name": "Invoices",
+	"base": "PersistedModel",
+	"options": {
+		"idInjection": true ,
+		"postgresql": {
+			"schema": "main",
+			"table": "invoices"
+		}
+	},
+	"properties": {
+		"id": {
+			"type": "Number",
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"id": true,
+			"generated": true,
+			"postgresql": {
+				"columnName": "id",
+				"dataType": "bigint",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"payer_id": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"postgresql": {
+				"columnName": "payer_id",
+				"dataType": "bigint",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"receiver_id": {
+			"type": "Number",
+			"required": true,
+			"default": 1,
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"postgresql": {
+				"columnName": "receiver_id",
+				"dataType": "integer",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"comments": {
+			"type": "String",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"postgresql": {
+				"columnName": "comments",
+				"dataType": "text",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"details": {
+			"type": "Object",
+			"required": false,
+			"default": null,
+			"length": null,
+			"scale": null,
+			"postgresql": {
+				"columnName": "details",
+				"dataType": "json",
+				"dataLength": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"amount": {
+			"type": "Number",
+			"required": true,
+			"length": null,
+			"precision": 53,
+			"scale": null,
+			"postgresql": {
+				"columnName": "amount",
+				"dataType": "float",
+				"dataLength": null,
+				"dataPrecision": 53,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"currency_code": {
+			"type": "String",
+			"required": true,
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"postgresql": {
+				"columnName": "currency_code",
+				"dataType": "character varying",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"status": {
+			"type": "String",
+			"description": "GENERATED,UNPAID,PAID,CANCELED",
+			"required": true,
+			"default": "GENERATED",
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"postgresql": {
+				"columnName": "status",
+				"dataType": "character varying",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"payment_type": {
+			"type": "String",
+			"required": true,
+			"default":"booking",
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"postgresql": {
+				"columnName": "payment_type",
+				"dataType": "character varying",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "NO"
+			}
+		},
+		"created_at": {
+			"type": "Date",
+			"default": "$now",
+			"required": true,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"postgresql": {
+				"columnName": "created_at",
+				"dataType": "timestamp without time zone",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "NO"
+			}
+		},
+		"transaction_date": {
+			"type": "Date",
+			"required": false,
+			"length": null,
+			"precision": null,
+			"scale": null,
+			"postgresql": {
+				"columnName": "transaction_date",
+				"dataType": "timestamp without time zone",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		},
+		"surcharge": {
+			"type": "Object",
+			"required": false,
+			"default": null,
+			"length": null,
+			"scale": null,
+			"postgresql": {
+				"columnName": "surcharge",
+				"dataType": "json",
+				"dataLength": null,
+				"dataScale": null,
+				"nullable": "YES"
+			}
+		}
+	}
+}

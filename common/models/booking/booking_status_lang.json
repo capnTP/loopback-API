@@ -1,0 +1,116 @@
+{
+    "name": "BookingStatusLang",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "booking_status_lang"
+      },
+      "relations": {
+        "bookingStatusLanguageIdFkeyrel": {
+          "model": "Languages",
+          "type": "belongsTo",
+          "foreignKey": "lang_id"
+        },
+        "bookingStatusLangBookingStatusIdFkeyrel": {
+          "model": "BookingStatus",
+          "type": "belongsTo",
+          "foreignKey": "booking_status_id"
+        }
+      }
+    },
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "status_name": {
+        "type": "Number",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "status",
+          "dataType": "bigint",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "backend_name": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": 53,
+        "scale": null,
+        "postgresql": {
+          "columnName": "backend_name",
+          "dataType": "float",
+          "dataLength": null,
+          "dataPrecision": 53,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "front_name": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": 53,
+        "scale": null,
+        "postgresql": {
+          "columnName": "front_name",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+    },
+    "booking_status_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "booking_status_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "lang_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "lang_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    }
+   }
+  }

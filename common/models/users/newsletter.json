@@ -1,0 +1,136 @@
+{
+    "name": "Newsletter",
+    "base": "PersistedModel",
+    "options": {
+      "idInjection": true ,
+      "postgresql": {
+        "schema": "main",
+        "table": "newsletter_subscription"
+      }
+    },
+    "mixins": {},
+    "properties": {
+      "id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "scale": 0,
+        "id": true,
+        "generated": true,
+        "postgresql": {
+          "columnName": "id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "email": {
+        "type": "String",
+        "required": true,
+        "length": null,
+        "precision": null,
+        "index": {"unique": true} ,
+        "scale": null,
+        "postgresql": {
+          "columnName": "email",
+          "dataType": "text",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "user_id": {
+        "type": "Number",
+        "length": null,
+        "precision": null,
+        "default": 0,
+        "scale": 0,
+        "postgresql": {
+          "columnName": "user_id",
+          "dataType": "integer",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": 0,
+          "nullable": "NO"
+        }
+      },
+      "newsletter_press": {
+        "type": "Boolean",
+        "default": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "newsletter_press",
+          "dataType": "boolean",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "newsletter_product_updates": {
+        "type": "Boolean",
+        "default": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "newsletter_product_updates",
+          "dataType": "boolean",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "newsletter_promotional": {
+        "type": "Boolean",
+        "default": true,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "newsletter_promotional",
+          "dataType": "boolean",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "NO"
+        }
+      },
+      "created_at": {
+        "type": "Date",
+        "default": "$now",
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "created_at",
+          "dataType": "timestamp with time zone",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      },
+      "updated_at": {
+        "type": "Date",
+        "required": false,
+        "length": null,
+        "precision": null,
+        "scale": null,
+        "postgresql": {
+          "columnName": "updated_at",
+          "dataType": "timestamp with time zone",
+          "dataLength": null,
+          "dataPrecision": null,
+          "dataScale": null,
+          "nullable": "YES"
+        }
+      }
+    }
+  }

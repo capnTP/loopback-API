@@ -1,0 +1,45 @@
+{
+  "family": "production-api",
+  "containerDefinitions": [
+    {
+      "image": "%REPOSITORY_URI%:%BUILD_TAG%",
+      "name": "production-api",
+      "memory": 900,
+      "memoryReservation": 400,
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 3003
+        }
+      ],
+      "environment": [
+        {
+          "name": "APPLICATION_NAME",
+          "value": "api"
+        },
+        {
+          "name": "IS_DISABLE_GRAPHIQL",
+          "value": "true"
+        },
+        {
+          "name": "LOGGING_LEVEL",
+          "value": "error"
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "name": "PAYMENT",
+          "value": "LIVE"
+        },
+        {
+          "name": "SERVER_TYPE",
+          "value": "production"
+        }
+      ]
+    }
+  ]
+}

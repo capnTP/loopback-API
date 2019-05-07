@@ -1,0 +1,41 @@
+{
+  "family": "development-api",
+  "containerDefinitions": [
+    {
+      "image": "%REPOSITORY_URI%:%BUILD_TAG%",
+      "name": "development-api",
+      "memory": 500,
+      "memoryReservation": 300,
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 3003
+        }
+      ],
+      "environment": [
+        {
+          "name": "APPLICATION_NAME",
+          "value": "api"
+        },
+        {
+          "name": "IS_DISABLE_GRAPHIQL",
+          "value": "false"
+        },
+        {
+          "name": "LOGGING_LEVEL",
+          "value": "error"
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "development"
+        },
+        {
+          "name": "SERVER_TYPE",
+          "value": "development"
+        }
+      ]
+    }
+  ]
+}

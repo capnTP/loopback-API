@@ -1,0 +1,1 @@
+pg_dump --column-inserts  -h development.ch5zrtiltjrv.ap-southeast-1.rds.amazonaws.com -U root   theasia --clean | psql -h localhost  -U root -d theasia

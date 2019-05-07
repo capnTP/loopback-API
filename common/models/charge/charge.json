@@ -1,0 +1,327 @@
+{
+  "name": "Charge",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true ,
+    "postgresql": {
+      "schema": "main",
+      "table": "charge"
+    },
+    "relations": {
+      "chargeBookingIdFkeyrel": {
+        "model": "Booking",
+        "type": "belongsTo",
+        "foreignKey": "booking_id"
+      },
+      "chargePaymentIdFkeyrel": {
+        "model": "Payments",
+        "type": "belongsTo",
+        "foreignKey": "payment_id"
+      },
+      "statusRel": {
+        "model": "ChargeStatus",
+        "type": "belongsTo",
+        "foreignKey": "charge_status_id"
+      },
+      "typeRel": {
+        "model": "ChargeType",
+        "type": "belongsTo",
+        "foreignKey": "charge_type_id"
+      }
+    }
+  },
+  "mixins": {
+     "PaymentLogsManagement": {},
+     "TimeStamp": { "createdAt": "created_at", "updatedAt": "updated_at" }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "booking_id": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "booking_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "payment_id": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "payment_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "payout_status": {
+      "type": "number",
+      "description" :[
+        "0: not created",
+        "1: created",
+        "2: paid",
+        "3 : hold",
+        "4 : suspend"
+      ],
+      "required": false,
+      "default": 0,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "payout_status",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "supplier_id": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "supplier_id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "pax_type": {
+      "type": "string",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "pax_type",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "selling_price": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "selling_price",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "supplier_price": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "supplier_price",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "local_price": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "local_price",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "local_currency_code": {
+      "type": "string",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "local_currency_code",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "local_exchange_rate": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "local_exchange_rate",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "charge_amount": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "charge_amount",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "charge_currency_code": {
+      "type": "string",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "charge_currency_code",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "charge_exchange_rate": {
+      "type": "number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "postgresql": {
+        "columnName": "charge_exchange_rate",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "is_cancel": {
+      "type": "boolean",
+      "description": "True if cancelled the whole booking",
+      "required":true,
+      "default": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "is_cancel",
+        "dataType": "bool",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "payment_date": {
+      "type": "date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "payment_date",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "charge_status_id": {
+      "type": "Number",
+      "required": true,
+      "postgresql": {
+        "columnName": "charge_status_id",
+        "dataType": "integer",
+        "nullable": "NO"
+      }
+    },
+    "charge_type_id": {
+      "type": "Number",
+      "required": true,
+      "postgresql": {
+        "columnName": "charge_type_id",
+        "dataType": "integer",
+        "nullable": "NO"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "default": "$now",
+      "required": true,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "date",
+      "required": false,
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "YES"
+      }
+    }
+  }
+}

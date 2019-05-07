@@ -1,0 +1,134 @@
+{
+  "name": "SuppliersPaymentAccounts",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true ,
+    "postgresql": {
+      "schema": "main",
+      "table": "supplier_payment_accounts"
+    },
+    "relations": {
+      "suppliersIdFkeyrel": {
+        "model": "Suppliers",
+        "type": "belongsTo",
+        "foreignKey": "supplier_id"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "supplier_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "supplier_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "payments_method_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "supplier_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "details": {
+      "type": "Object",
+			"required": false,
+			"default": "[]",
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"postgresql": {
+				"columnName": "details",
+				"dataType": "json",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "YES"
+			}
+    },
+    "is_default": {
+      "type": "Boolean",
+			"required": false,
+			"default": "false",
+			"length": null,
+			"precision": null,
+			"scale": 0,
+			"postgresql": {
+				"columnName": "is_default",
+				"dataType": "boolean",
+				"dataLength": null,
+				"dataPrecision": null,
+				"dataScale": 0,
+				"nullable": "YES"
+			}
+    },
+    "status": {
+      "type": "Boolean",
+      "length": null,
+      "precision": null,
+      "default": false,
+      "scale": 0,
+      "default": false,
+      "postgresql": {
+        "columnName": "status",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0
+      }
+    }
+  },
+  "acls":[
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "*"
+    }
+  ]
+}

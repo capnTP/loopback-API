@@ -1,0 +1,83 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Voucher #{beforeMainHeader}
+    link(href="https://fonts.googleapis.com/css?family=Raleway", rel="stylesheet")
+    style
+      include ./css/voucher_style.css
+    style(type='text/css').
+      body{
+        font-family: 'Raleway', sans-serif;
+      }
+  body
+    div.container
+      div.row.wrapper-header-section
+        div.col-5
+          div.content-no-left
+            img.img-header(src=imgData, alt="")
+        div.col-7
+          div.content-no-right
+            h3.header-voucher-no #{labelBookingNo} ##{beforeMainHeader}
+            h2.header-product-name #{mainHeader}
+            span.header-product-name-eng #{mainHeaderBracket}
+            h3.header-subproduct-name #{subHeader}
+            span.header-subproduct-name-eng #{subHeaderBracket}
+      div.row
+        div.wrapper-content-section
+          - var nMax = nArrays;
+          - var jsonHeaderTextArray = JSON.parse(JSON.stringify(headerTextArray));
+          - var jsonDataTextArray = JSON.parse(JSON.stringify(dataTextArray));
+          - for (var i = 0; i < nMax; i++) {
+            div.col-3
+              div.content
+                span.item-header= jsonHeaderTextArray[i]
+                span.item-data= jsonDataTextArray[i]
+            - if ((i+1) % 4 == 0) {
+              div.content
+                div.section-line
+            - }
+          - }
+          - var noticeDataObj = JSON.parse(JSON.stringify(noticeData))
+          - if (noticeDataObj.length > 0) {
+              div.content
+                    div.section-line
+              div.col-12
+                div.content
+                  span.item-header= noticeHeader
+                    ul
+                      - for (var i = 0; i < noticeDataObj.length; i++) {
+                        li
+                          span.item-data= noticeDataObj[i]
+                      - }
+          - }
+      - var footerDataObj = JSON.parse(JSON.stringify(footer));
+      div.row.sticky-bottom
+        div.wrapper-footer-section
+          //- div.col-12.text-right
+          //-   div.text-center.wrapper-qrcode
+          //-   - if (!isAffiliate) {
+          //-     span.qr-label= footerDataObj.qrCode.label
+          //-     img(src=footerDataObj.qrCode.data, width=footerDataObj.qrCode.width, height=footerDataObj.qrCode.height)
+          //-   - }
+          //- div.col-12
+          //-   div.content
+          //-   - if (!isAffiliate) {
+          //-     span.contact-label= footerDataObj.theAsiaContact.label
+          //-     span.contact-data= footerDataObj.theAsiaContact.data
+          //-   - }
+        //- div.section-line
+        div.wrapper-footer-section
+          div.col-9
+            //- div.content.policy-wrapper
+            //- - if (!isAffiliate) {
+            //-   span.policy-label= footerDataObj.cancellationPolicies.label
+            //-   span.policy-data= footerDataObj.cancellationPolicies.data
+            //- - }
+            //- div.content
+            //- - if (!isAffiliate) {
+            //-   img(src=footerDataObj.address.data, width=footerDataObj.address.width)
+            //- - }
+          div.col-3
+            div.content.stamp-wrapper
+              img(src=footerDataObj.stamp.data, width=footerDataObj.stamp.width)

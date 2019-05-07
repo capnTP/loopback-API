@@ -1,0 +1,214 @@
+/*
+* Main layout files share with every template
+* This layout use 12 grid system like bootstrap
+* Please make sure everytime if you wanna edit this layout because it will effect to every template that used 
+*/
+html, body {
+  padding: 0 !important;
+  margin: 0 !important;
+  /* font-family: 'Raleway', sans-serif; */
+  letter-spacing: .05rem !important;
+}
+
+.container {
+  padding: 0 !important;
+  margin: 0 !important; }
+
+/*
+* row layout section for use with 12 grid like boostrap
+* but no padding left and right
+*/
+.row {
+  width: 100%; }
+
+/*
+* column layout section use 12 grid like boostrap
+* but no padding left and right
+*/
+.col-1 {
+  width: 8.33%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-2 {
+  width: 16.66%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-3 {
+  width: 25%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-4 {
+  width: 33.33%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-5 {
+  width: 41.66%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-6 {
+  width: 50%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-7 {
+  width: 58.33%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-8 {
+  width: 66.66%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-9 {
+  width: 75%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-10 {
+  width: 83.33%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-11 {
+  width: 91.66%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+.col-12 {
+  width: 100%;
+  display: inline-block;
+  vertical-align: text-top; }
+
+/*
+* content wrapper
+*
+*/
+.content-no-left {
+  padding-left: 0;
+  padding-right: 1em; }
+
+.content {
+  padding-left: 1em;
+  padding-right: 1em;
+  display: block; }
+
+.content-no-right {
+  padding-left: 1em;
+  padding-right: 0; }
+/*
+* custom element css
+*
+*/
+.img-header {
+  display: block;
+  width: 100%; }
+
+.header-voucher-no {
+  padding-top: 1.5em;
+  color: #847E7F; }
+
+.header-product-name {
+  padding-top: .4em;
+  padding-right: 3em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  color: #4CAC87;
+  font-weight: 900; }
+.header-product-name-eng {
+  padding-right: 3em;
+  color: #4CAC87;
+  font-weight: 200; }
+
+.header-subproduct-name {
+  padding-top: .2em;
+  padding-right: 3em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  color: #363436;
+  font-weight: 800; }
+.header-subproduct-name-eng {
+  padding-top: .4em;
+  padding-right: 3em;
+  color: #363436;
+  font-weight: 200; }
+
+.wrapper-header-section {
+  border-bottom: 1px #00ce87 solid; }
+
+.wrapper-content-section {
+  margin-top: 1.2em;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+  min-height: 640px; }
+
+.item-header {
+  display: block;
+  width: 100%;
+  font-size: .7em;
+  font-weight: 200;
+  color: #847E7F;
+  padding-top: 1em;
+  padding-bottom: .5em; }
+
+.item-data {
+  width: 100%;
+  display: block;
+  font-size: .8em;
+  font-weight: 600;
+  color: #363436; }
+
+.section-line {
+  width: 100%;
+  display: block;
+  border-bottom: #DCD9D9 1px solid;
+  margin-top: .7em;
+  margin-bottom: .1em; }
+
+.sticky-bottom {
+  bottom: 0;
+  left: 0; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.wrapper-footer-section {
+  font-size: .7em;
+  margin-left: 1.8em;
+  margin-right: 1.8em; }
+
+.wrapper-footer-section .wrapper-qrcode {
+  padding-right: 2em;
+  width: 150px;
+  height: 170px;
+  float: right;
+}
+
+.wrapper-footer-section .wrapper-qrcode .qr-label {
+  font-weight: 800;
+}
+
+.wrapper-footer-section .contact-data {
+  font-weight: 800;
+}
+.wrapper-footer-section .policy-wrapper {
+  margin-top: .8em;
+}
+.wrapper-footer-section .policy-wrapper .policy-label {
+  display: inline-block;
+}
+.wrapper-footer-section .policy-wrapper .policy-data {
+  font-weight: 800;
+  display: inline-block;
+}
+.wrapper-footer-section .stamp-wrapper {
+  margin-top: 1em;
+}

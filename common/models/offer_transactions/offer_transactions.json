@@ -1,0 +1,70 @@
+{
+  "name": "OfferTransactions",
+  "options": {
+    "idInjection": false,
+    "postgresql": {
+      "schema": "main",
+      "table": "offer_transactions"
+    },
+    "relations": {
+      "offerTransactionOfferIdFkeyrel": {
+        "model": "Offers",
+        "type": "belongsTo",
+        "foreignKey": "offer_id"
+      },
+      "offerTransactionUserIdFkeyrel": {
+        "model": "Users",
+        "type": "belongsTo",
+        "foreignKey": "user_id"
+      }
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": 1,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "offer_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "offer_id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "user_id": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+// {
+//   "name": "Scrapes",
+//   "base": "PersistedModel",
+//   "options": {
+//     "idInjection": true,
+//     "postgresql": {
+//       "schema": "main",
+//       "table": "scrapes"
+//     }
+//   },
+//   "properties": {
+//     "id": {
+//       "type": "Number",
+//       "id": true,
+//       "generated": true,
+//       "postgresql": {
+//         "columnName": "id",
+//         "dataType": "serial",
+//         "nullable": "NO"
+//       }
+//     },
+//     "url": {
+//       "type": "String",
+//       "required": true,
+//       "postgresql": {
+//         "columnName": "url",
+//         "dataType": "text",
+//         "nullable": "NO"
+//       }
+//     },
+//     "page_type": {
+//       "type": "String",
+//       "required": true,
+//       "postgresql": {
+//         "columnName": "page_type",
+//         "dataType": "text",
+//         "nullable": "NO"
+//       }
+//     },
+//     "size": {
+//       "type": "Number",
+//       "description": "HTML File size in KB",
+//       "postgresql": {
+//         "columnName": "size",
+//         "dataType": "integer",
+//         "nullable": "YES"
+//       }
+//     },
+//     "page_title": {
+//       "type": "String",
+//       "postgresql": {
+//         "columnName": "page_title",
+//         "dataType": "text",
+//         "nullable": "YES"
+//       }
+//     },
+//     "meta_description": {
+//       "type": "String",
+//       "postgresql": {
+//         "columnName": "meta_description",
+//         "dataType": "text",
+//         "nullable": "YES"
+//       }
+//     },
+//     "meta_robots": {
+//       "type": "String",
+//       "postgresql": {
+//         "columnName": "meta_robots",
+//         "dataType": "text",
+//         "nullable": "YES"
+//       }
+//     },
+//     "created_at": {
+//       "type": "Date",
+//       "default": "$now",
+//       "required": true,
+//       "postgresql": {
+//         "columnName": "created_at",
+//         "dataType": "timestamp without time zone",
+//         "nullable": "NO"
+//       }
+//     }
+//   }
+// }

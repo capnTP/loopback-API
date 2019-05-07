@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>Payment Invoice</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <%- include('./style.ejs') %>
+  </head>
+
+  <body>
+    <div class="wrapper-invoice-content">
+      <div class="row wrapper-header-section">
+        <div class="col-4">
+          <img src="<%= logoPath %>" />
+        </div>
+        <div class="col-8">
+          <h1><%= header %></h1>
+        </div>
+      </div>
+      <div class="section-line-witout-bottom-pad"></div>
+      <div class="wrapper-middle-section">
+        <div class="row">
+          <div class="col-5">
+            <div class="wrapper-address-to">
+              <div class="row">
+                <span class="label">Voucher No : </span>
+                <span class="data"> <%= voucherNo %></span>
+              </div>
+              <div class="row">
+                <span class="label">Paid to : </span>
+                <span class="data"> <%= paidTo %></span>
+              </div>
+              <div class="row">
+                <span class="label">Payment Date : </span>
+                <span class="data"> <%= paymentDate %></span>
+              </div>
+              <div class="row">
+                <span class="label">Payment Type : </span>
+                <span class="data"> <%= paymentType %></span>
+              </div>
+              <div class="row">
+                <span class="label">Paid By : </span>
+                <span class="data"> <%= paidBy %></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-7">
+            <div class="col-4">
+              
+            </div>
+            <div class="col-4 three-box-top">
+              <span class="box-label">Operation</span>
+              <span class="box-data"><%= operation %></span>
+            </div>
+            <div class="col-4 three-box-top">
+              <span class="box-label">Accounting</span>
+              <span class="box-data"><%= accounting %></span>
+            </div>
+            <div class="col-12">
+              <h2 class="text-right voucher-notice-data">Payall amount : <%= total %></h2>
+              <h2 class="text-right voucher-notice-data">Due date : <%= paymentDate %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-line"></div>
+      <div class="wrapper-table-section">
+        <div class="row">
+          <table>
+            <thead class="table-light-green">
+              <tr>
+                <th width="17%"><strong>Product Code</strong></th>
+                <th width="10%"><strong>BID</strong></th>
+                <th width="20%"><strong>Pax</strong></th>
+                <th width="15%"><strong>Trip Start Date</strong></th>
+                <th class="text-right" width="15%"><strong>Amount</strong></th>
+                <th width="15%"><strong>Booking Type</strong></th>
+                <th width="8%"><strong>Status</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (var i = 0; i < tableData.length; i++) { %>
+              <tr>
+                <td><%= tableData[i].productCode %></td>
+                <td><%= tableData[i].bid %></td>
+                <td><%= tableData[i].pax %></td>
+                <td><%= tableData[i].tripStartDate %></td>
+                <td class="text-right"><%= tableData[i].amount %></td>
+                <td><%= tableData[i].bookingType %></td>
+                <td><%= tableData[i].status %></td>
+              </tr>
+              <% } %>
+              <tr class="table-green">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right"><span><strong>Total</strong></span></td>
+                <td class="text-right"><span><strong><%= total %></strong></span></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="wrapper-bank-detail">
+        <div class="row">
+          <span><strong>Accounting Info</strong></span>
+        </div>
+        <div class="row">
+          <table>
+            <tbody>
+              <tr>
+                <td width="15%"><strong>Bank Name:</strong></td>
+                <td width="50%">Bangkok Bank PLC.</td>
+                <td width="15%"><strong>Account Name:</strong></td>
+                <td width="20%">The Asia(Thai) Co.Ltd.</td>
+              </tr>
+              <tr>
+                <td><strong>Bank Address:</strong></td>
+                <td>12345 Silom Road, Bangkok 10110, Thailand</td>
+                <td><strong>Account No:</strong></td>
+                <td>101-01010-0101</td>
+              </tr>
+              <tr>
+                <td><strong>Branch:</strong></td>
+                <td>Head Office, Silom</td>
+                <td><strong>SWIFT Code:</strong></td>
+                <td>BKKHGSU-86383</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="section-line"></div>
+      <div class="footer-address">
+        <span>The Asia(Thai) Co.Ltd. 15 Ekkamai Soi 4, Prakanong-Nua, Wattana, Bangkok 10110</span>
+        <span>Tel +66(0) 2 255 7611-14 | Fax +66(0)2 255 7615 | info@theasia.com | www.theasia.com</span>
+      </div>
+    </div>
+  </body>
+</html>

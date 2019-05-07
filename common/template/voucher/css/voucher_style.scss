@@ -1,0 +1,107 @@
+// /* for path we use root at voucher.pug because this css will include in template directly */
+$TheAsiaGreen: #4CAC87;
+$charcoalBlack: #363436;
+$MediumGray: #847E7F;
+$LightGray: #DCD9D9;
+
+/*
+* custom element css
+*
+*/
+
+.img-header{
+  display: block;
+  width: 100%;
+}
+.header-voucher-no{
+  padding-top: 1.5em;
+  color: $MediumGray;
+}
+.header-product-name{
+  padding-top: .7em;
+  padding-right: 3em;
+  color: $TheAsiaGreen;
+  font-weight: 900;
+}
+.header-subproduct-name{
+  padding-top: .4em;
+  padding-right: 3em;
+  color: $charcoalBlack;
+  font-weight: 800;
+}
+.wrapper-header-section{
+  border-bottom: 1px #00ce87 solid;
+}
+.wrapper-content-section{
+  margin-top: 1.2em;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+  height: 480px;
+}
+
+.item-header{
+  display: block;
+  width: 100%;
+  font-size: .7em;
+  font-weight: 200;
+  color: $MediumGray;
+  padding-top: 1em;
+  padding-bottom: .5em;
+}
+.item-data{
+  width: 100%;
+  display: block;
+  font-size: .8em;
+  font-weight: 600;
+  color: $charcoalBlack;
+}
+.section-line{
+  width: 100%;
+  display: block;
+  border-bottom: $LightGray 1px solid;
+  margin-top: .7em;
+  margin-bottom: .1em;
+}
+
+.sticky-bottom{
+  bottom: 0;
+  left: 0;
+}
+
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+
+.wrapper-footer-section{
+  font-size: .7em;
+  margin-left: 1.8em;
+  margin-right: 1.8em;
+  .wrapper-qrcode{
+    padding-right: 2em;
+    width: 150px;
+    height: 170px;
+    float: right;
+    .qr-label{
+      font-weight: 800;
+    }
+  }
+  .contact-data{
+    font-weight: 800;
+  }
+  .policy-wrapper{
+    margin-top: .8em;
+    .policy-label{
+      display: inline-block;
+    }
+    .policy-data{
+      font-weight: 800;
+      display: inline-block;
+    }
+  }
+  .stamp-wrapper{
+    margin-top: 1em;
+  }
+}

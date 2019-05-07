@@ -1,0 +1,22 @@
+{
+  "ids": {
+    "AccessToken": 2,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "Ingenico": 5
+  },
+  "models": {
+    "AccessToken": {
+      "wDPOo0VzD0wkxAEGYU8bYsAvCxOySopOrKQ4fYgbOOxilElkcBuR2sKbfiugXimS": "{\"id\":\"wDPOo0VzD0wkxAEGYU8bYsAvCxOySopOrKQ4fYgbOOxilElkcBuR2sKbfiugXimS\",\"ttl\":1209600,\"created\":\"2017-09-28T19:34:30.196Z\",\"userId\":1}"
+    },
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "Ingenico": {
+      "2": "{\"payment_method_id\":2}",
+      "3": "{\"id\":3}",
+      "4": "{\"booking_id\":\"xxxasafsa\",\"payment_method_id\":30,\"id\":4}"
+    }
+  }
+}

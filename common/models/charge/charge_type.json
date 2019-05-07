@@ -1,0 +1,62 @@
+{
+  "name": "ChargeType",
+  "values": [
+    "1 - Tour Charge",
+    "2 - Other Charge",
+    "3 - No Show",
+    "4 - Full Penalty",
+    "5 - Cancellation Fee",
+    "6 - Processing Fee",
+    "7 - Waive Cancellation Fee",
+    "8 - Customer Cancellation Fee"
+  ],
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "charge_type"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "id": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "serial",
+        "nullable": "NO"
+      }
+    },
+    "name": {
+      "type": "String",
+      "length": null,
+      "required": true,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "character varying",
+        "dataLength": null,
+        "nullable": "NO"
+      }
+    },
+    "created_at": {
+      "type": "date",
+      "default": "$now",
+      "required": true,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "date",
+      "required": false,
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "nullable": "YES"
+      }
+    }
+  }
+}

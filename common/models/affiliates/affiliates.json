@@ -1,0 +1,370 @@
+{
+  "name": "Affiliates",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "postgresql": {
+      "schema": "main",
+      "table": "affiliates"
+    },
+    "relations": {
+      "country": {
+        "model": "Countries",
+        "type": "belongsTo",
+        "foreignKey": "nationality"
+      },
+      "user": {
+        "model": "Users",
+        "type": "belongsTo",
+        "foreignKey": "user_id"
+      },
+      "affiliate_acct": {
+        "model": "AffiliatesBillingAcct",
+        "type": "hasOne",
+        "foreignKey": "affiliateId"
+      },
+      "affiliate_invoices": {
+        "model": "AffiliatesInvoices",
+        "type": "hasMany",
+        "foreignKey": "affiliateId"
+      }
+    }
+  },
+  "mixins": {
+    "TimeStamp": { "createdAt": "created_at", "updatedAt": "updated_at" }
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "id": true,
+      "generated": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "bigserial",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "company_name": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "postgresql": {
+        "columnName": "company_name",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "email": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "index": {"unique": true},
+      "required": "true",
+      "postgresql": {
+        "columnName": "email",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "contact_firstname": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "postgresql": {
+        "columnName": "contact_firstname",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "contact_lastname": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "postgresql": {
+        "columnName": "contact_lastname",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "address": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": false,
+      "postgresql": {
+        "columnName": "address",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "nationality": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "postgresql": {
+        "columnName": "nationality",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "language_id": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "language_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "currency_id": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "currency_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "user_id": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "required": false,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "contact_number": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "postgresql": {
+        "columnName": "contact_number",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "acct_confirmation": {
+      "type": "Boolean",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "default": false,
+      "postgresql": {
+        "columnName": "acct_confirmation",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "asset_mgt": {
+      "type": "Boolean",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "default": false,
+      "postgresql": {
+        "columnName": "asset_mgt",
+        "dataType": "boolean",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "rates": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "rates",
+        "dataType": "real",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "markupRates": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "markupRates",
+        "dataType": "real",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "logo": {
+      "type": "String",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "logo",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0
+      }
+    },
+    "status": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "default": 0,
+      "postgresql": {
+        "columnName": "status",
+        "dataType": "smallint",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    },
+    "created_at": {
+      "type": "Date",
+      "default": "$now",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "created_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "updated_at": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "updated_at",
+        "dataType": "timestamp without time zone",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      }
+    },
+    "settings": {
+      "type": "Object",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": false,
+      "postgresql": {
+        "columnName": "settings",
+        "dataType": "json",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "invoice_settings": {
+      "type": "Object",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": false,
+      "postgresql": {
+        "columnName": "invoice_settings",
+        "dataType": "json",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "billing_country": {
+      "type": "Number",
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "required": "true",
+      "postgresql": {
+        "columnName": "billing_country",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "NO"
+      }
+    }
+  }
+}

@@ -1,0 +1,317 @@
+<html>
+
+<head>
+    <% for (let i=0; i<font_family_name_link.length; i++) { %>
+        <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+        <% } %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+    a {
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body style="
+  font-family: <%= font_family_name_name %> !important;
+  text-decoration:none;
+  background-color: #d2d2d2;">
+  <div class="main-wrapper" style="
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 0 20px;
+    font-family: <%= font_family_name_name %>;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #363436;
+    background-color: #fff;">
+      <div class="top-nav" style="
+        height: 100px;
+        display: table;
+        width: 100%;
+        font-size: 14px;
+        background-color: #fff;
+        border-bottom: 1px solid #dedede;">
+        <div class="wrapper-logo" style="
+          height: 30px;
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 2em;
+          width: 70%;">
+          <a href="https://www.theasia.com" target="_blank"><img src="https://theasia.imgix.net/logo/theasia.png"></a>
+        </div>
+        <div class="wrapper-contact" style="
+          height: 30px;
+          padding-bottom: 30px;
+          display: table-cell;
+          vertical-align: bottom;
+          width: 30%;
+          font-size: 1.2em;">
+          <div style="
+            display: block;
+          ">
+            <a href="" style="
+              text-decoration: none;
+              color: #000;
+              display: inline-block;
+              vertical-align: middle;
+            ">
+              cs@theasia.com
+            </a>
+            <img src="https://theasia.imgix.net/emails/images/envelope.jpg" alt="" style="
+              display: inline-block;
+              vertical-align: middle;
+            " />
+          </div>
+          
+        </div>
+      </div>
+      <div class="jumbotron" style="
+          width: 100%;
+          background-color: #fff;
+        ">
+        <div class="jumbotron-headline-wrapper" style="
+          display: inline-block;
+          width: 45%;
+          vertical-align: top;">
+          <div class="jumbotron-headline" style="
+            padding-top: 20px;
+            padding-left: 40px;
+            width: 250px;">
+            <div style="padding-bottom: 15px;">
+              <h1 style="
+                font-size: 2.4em;
+                font-weight: 700;
+                color: #4bab86;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;"><%= section_1_text_1 %></h1>
+            </div>
+            <div style="padding-bottom: 20px;">
+              <span style="
+                font-size: 1.2em;
+                margin-bottom: 1em;"><%= section_1_text_2 %>
+              </span>
+            </div>
+            <div>
+              <a class="btn-let-us-know" href="" style="
+                color: #fff;
+                background-color: #ff8733;
+                border-radius: 3px;
+                border: none;
+                display: inline-block;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 40px;
+                padding-right: 40px;
+                font-size: 1.2em;
+                font-weight: bolder;"
+              ><%= section_1_btn %></a>
+            </div>
+          </div>
+        </div>
+        <div class="jumbotron-side-img" style="
+          width: 55%;
+          display: inline-block;">
+          <img style="width: 100%;" src="https://theasia.imgix.net/emails/images/side_hero.jpg" alt="">
+        </div>
+      </div>
+      <div class="booking-content" style="
+        display: block;
+        background-color: #fff;">
+        <div class="greeting" style="
+          display: block;
+          padding-top: 40px;
+          padding-left: 40px;
+          padding-right: 40px;">
+          <h2 style="
+            font-weight: bolder;
+            color: #4bab86;
+            font-size: 1.3em;"><%= section_2_text_1_1 %> <%= name %><%= section_2_text_1_2 %></h2>
+        </div>
+        <div class="greeting-text" style="
+          display: block;
+          padding-left: 40px;
+          padding-right: 40px;">
+          <p><%= section_2_text_2 %></p>
+        </div>
+        <div class="product-img" style="
+          display: block;
+          padding-top: 20px;
+          padding-left: 40px;
+          padding-right: 40px;">
+          <!-- don't forget to remove height -->
+          <img style="width: 100%;" src="<%= product_image %>" alt="">
+        </div>
+        <div class="product-detail" style="
+          display: block;
+          padding-left: 40px;
+          padding-right: 40px;">
+          <div class="product-name" style="
+            width: 75%;
+            display: inline-block;
+          ">
+            <h2 style="margin-top: 10px; margin-bottom: 10px;"><%= tour_name %></h2>
+            <span><%= tour_location %></span>
+          </div>
+          <div class="product-rating" style="
+            width: 25%;
+            display: inline-block;
+            vertical-align: top;
+            padding-top: 10px;
+            color: #d3d3d3;
+            font-size: 1.6em;
+          ">
+          <% for (var i = 1; i < 6; i++) { %>
+            <% if (i <= tour_rating) { %>
+              <span style="display: inline-block; color: gold;">&#x2605;</span>
+            <% } else { %>
+              <span style="display: inline-block;">&#x2605;</span>
+            <% } %>
+          <% } %>
+          </div>
+        </div>
+        <div class="wrapper-feedback-button" style="
+          display: block;
+          margin-top: 20px;
+          margin-bottom: 40px;
+          padding-left: 40px;
+          padding-right: 40px;">
+            <a href="" style="
+            color: #fff;
+            background-color: #ff8733;
+            border-radius: 3px;
+            border: none;
+            display: inline-block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            padding-right: 40px;
+            font-size: 1.2em;
+            font-weight: bolder;"><%= section_2_btn %></a>
+        </div>
+      </div>
+      <div class="how-to-review" style="
+        display: block;
+        background-color: #fff;
+      ">
+        <div class="how-to-topic" style="
+        display: block;
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;">
+          <h2 style="
+            font-weight: bolder;
+            color: #4bab86;
+            font-size: 1.3em;"><%= section_3_text_1 %></h2>
+        </div>
+        <div class="how-to-content" style="
+          display: block;
+          padding-left: 40px;
+          padding-right: 40px;
+          padding-bottom: 40px;">
+          <div class="media" style="
+            display: block;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 10px;">
+            <div style="
+              display: inline-block;
+              width: 20%;">
+              <img width="70px;" src="https://theasia.imgix.net/emails/images/step1.jpg" alt="">
+            </div>
+            <div style="
+              width: 80%;
+              display: inline-block;
+              vertical-align: top;
+              font-size: 1.1em;">
+              <span style="display: block;"><strong><%= section_3_text_2 %></strong></span>
+              <span style="display: block;"><%= section_3_text_3_1 %><a href="http://www.theasia.com/myaccount" style="text-decoration:none; color: #4bab86;"><%= section_3_text_3_2 %></a><%= section_3_text_3_3 %></span>
+              <span style="
+                display: block;
+                color: #4bab86"><strong><a href="http://www.theasia.com/myaccount" style="text-decoration: none; color: #4bab86;">http://www.theasia.com/myaccount</a></strong></span>
+            </div>
+          </div>
+          <div class="media" style="
+            display: block;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 10px;">
+            <div style="
+                display: inline-block;
+                width: 20%;">
+              <img width="70px;" src="https://theasia.imgix.net/emails/images/step2.jpg" alt="">
+            </div>
+            <div style="
+                width: 80%;
+                display: inline-block;
+                vertical-align: top;
+                font-size: 1.1em;">
+              <span style="display: block;"><strong><%= section_3_text_4 %></strong></span>
+              <span style="display: block;"><%= section_3_text_5 %></span>
+            </div>
+          </div>
+          <div class="media" style="
+              display: block;
+              padding-left: 30px;
+              padding-top: 20px;
+              padding-bottom: 10px;">
+            <div style="
+                display: inline-block;
+                width: 20%;">
+              <img width="70px;" src="https://theasia.imgix.net/emails/images/step3.jpg" alt="">
+            </div>
+            <div style="
+                width: 80%;
+                display: inline-block;
+                vertical-align: top;
+                font-size: 1.1em;">
+              <span style="display: block;"><strong><%= section_3_text_6 %></strong></span>
+              <span style="display: block;"><%= section_3_text_7 %></span>
+              <span style="
+                display: block;
+                color: #4bab86"><strong><%= section_3_text_8 %></strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="
+        display: block;
+        background-color: #fff;        
+        padding-bottom: 20px;
+      ">
+        <div style="
+          display: block;
+          padding-left: 40px;
+          padding-right: 40px;
+          padding-top: 20px;
+        ">
+          <div style="
+            display: block;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 1em;
+          ">
+            <p><%= section_4_text_1 %></p>
+            <p><%= section_4_text_2 %></p>
+            <span style="display: block;"><%= section_4_text_3 %></span>
+            <span style="display: block; color: #4bab86;"><strong><a style="text-decoration:none; color: #4bab86;"><%= section_4_text_4 %></a></strong></span>
+          </div>
+          <%- include('../partial/footer.ejs') %>
+        </div>
+      </div>
+      
+      </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

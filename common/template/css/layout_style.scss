@@ -1,0 +1,103 @@
+/*
+* Main layout files share with every template
+* This layout use 12 grid system like bootstrap
+* Please make sure everytime if you wanna edit this layout because it will effect to every template that used 
+*/
+html, body {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: 'Raleway', sans-serif;
+}
+.container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/*
+* row layout section for use with 12 grid like boostrap
+* but no padding left and right
+*/
+.row{
+  width: 100%;
+}
+/*
+* column layout section use 12 grid like boostrap
+* but no padding left and right
+*/
+.col-1{
+  width: 8.33%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-2{
+  width: 16.66%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-3{
+  width: 25%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-4{
+  width: 33.33%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-5{
+  width: 41.66%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-6{
+  width: 50%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-7{
+  width: 58.33%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-8{
+  width: 66.66%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-9{
+  width: 75%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-10{
+  width: 83.33%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-11{
+  width: 91.66%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+.col-12{
+  width: 100%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+/*
+* content wrapper
+*
+*/
+.content-no-left{
+  padding-left: 0;
+  padding-right: 1em;
+}
+.content{
+  padding-left: 1em;
+  padding-right: 1em;
+  display: block;
+}
+.content-no-right{
+  padding-left: 1em;
+  padding-right: 0;
+}

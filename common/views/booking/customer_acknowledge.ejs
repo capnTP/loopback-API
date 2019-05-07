@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% for (let i=0; i<font_family_name_link.length; i++) { %>
+      <link href='https://fonts.googleapis.com/css?family=<%= font_family_name_link[i] %>' rel='stylesheet' type='text/css'>
+  <% } %>
+  <style>
+      * {
+        font-family: <%= font_family_name_name %> !important;
+      }
+  </style>
+</head>
+
+<body>
+
+  <div style="
+    max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+      font-family: <%= font_family_name_name %>;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      color: #363436;
+
+    ">
+    <div>
+      <div style="height: 70px;display: table;width: 100%;border-bottom: solid 2px rgba(54, 52, 54, 0.1);font-size: 14px;">
+        <div style="height: 30px;display: table-cell;vertical-align: middle;">
+          <img src="https://theasia.imgix.net/logo/theasia.png">
+        </div>
+      </div>
+      <div class="content" style="margin-top: 30px;font-size: 14px;">
+        <div style="margin-bottom: 20px;color: black;font-weight: bold;"><%= paragraph1 %> <%= name %>,</div>
+        <div><%= paragraphGreeting %>
+          <b style="color:black"><%= paragraphGrretingCompanyName %></b>
+        </div>
+        <div><%= paragraph2 %>
+          <b style="
+               color: black;
+               "><%= booking_no %></b><%= paragraph3 %></div>
+        <table style="margin:20px 0;width: 100%;">
+          <tbody>
+            <tr>
+              <td style="width: 50%">
+                <b><%= lead_guest %></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= name %></td>
+            </tr>
+
+            <tr>
+              <td style="width: 50%;">
+                <b><%= trip_activity1 %> &amp; <%= trip_activity2 %></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= product_name %></td>
+            </tr>
+            <tr>
+              <td style="width: 50%;">
+                <b><%= option %></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= sub_product_name %></td>
+            </tr>
+            <tr>
+              <td style="width: 50%;">
+                <b><%= trip_start_date %></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= trip_starts %></td>
+            </tr>
+            <% if (trip_ends != 'Invalid date') { %>
+            <tr>
+              <td style="width: 50%;">
+                <b><%= trip_end_date %></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= trip_ends %></td>
+            </tr>
+            <% } %>
+            <tr>
+              <td style="width: 50%;">
+                <b><%= no_of_guest %></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= total_pax %> (<%= ' ' + adult_pax + child_pax + infant_pax %> )</td>
+            </tr>
+            <tr>
+              <td style="width: 50%;">
+                <b><%= cancellation_policy_label %></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= cancellation_policy %></td>
+            </tr>
+            <tr>
+              <td style="width: 50%;">
+                <b></b>
+              </td>
+              <td style="
+                        color: grey;
+                        "><%= cancellation_policy_description %></td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <div><%= paragraph_thank_you %></div><%= paragraph_regards %>
+          <div style="color: #4cac87;font-weight: bold;"><a style="font-weight: bold; color: #4cac87;text-decoration: none;" target="blank" href="<%= website_url %>"><%= paragraph_regards_company_name %></a></div>
+        </div>
+
+        <%- include('../partial/footer.ejs') %>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

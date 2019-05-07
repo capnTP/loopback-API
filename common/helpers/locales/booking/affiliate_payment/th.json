@@ -1,0 +1,20 @@
+{
+  "main_topic_before": "Payment link for requested booking ",
+  "main_topic_after": " ",
+  "paragraph1_1": "We have created a booking request tour  ",
+  "paragraph1_2": " departure on ",
+  "paragraph1_3": " on your request. In order to process this booking please complete payment on below link",
+  "complete_button": "Complete Payment",
+  "booking_detail" : "Booking Details",
+  "tour_name": "Tour name : ",
+  "no_of_pax": "No. of pax : ",
+  "traveler_name": "Traveler Name : ",
+  "passport_no": "Passport No. : ",
+  "departure_date": "Departure Date : ",
+  "cancelation_policy": "Cancelation Policy : ",
+  "total_price": "Total Price : ",
+  "paragraph2": "Please check the information above carefully.  If you have any questions, please contact us.",
+  "paragraph2_1": "Please click ",
+  "paragraph2_2": ", to complete the payment within 24 hours. Or ,your booking will be cancelled automatically by our system.",
+  "regards": "Thank you for your cooperation"
+}
